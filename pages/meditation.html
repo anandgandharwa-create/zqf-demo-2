@@ -3,95 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meditation</title>
+<title>Meditation Audio</title>
 
 <style>
 body{
 margin:0;
-font-family:sans-serif;
-background:linear-gradient(180deg,#020617,#071826);
+font-family:system-ui;
+background:#071826;
 color:#fff;
 text-align:center;
 }
 
+/* Header */
+header{
+background:linear-gradient(90deg,#5b2c83,#402060);
+padding:18px;
+font-size:22px;
+font-weight:bold;
+}
+
 /* Container */
 .container{
-padding:30px 20px;
-max-width:400px;
-margin:auto;
+padding:20px;
+}
+/* Cards */
+/* 💚 GREEN PREMIUM AUDIO CARDS */
+
+/* 💚 SOLID GREEN CARDS (NO ANIMATION) */
+
+.card{
+background:#00e676;   /* 🔥 solid bright green */
+border-radius:18px;
+padding:22px;
+margin:16px auto;
+max-width:320px;
+cursor:pointer;
+
+border:2px solid #00ff95;
+
+transition:0.25s;
+
+/* clean glow */
+box-shadow:0 8px 20px rgba(0,255,150,0.4);
 }
 
-/* Title */
-h2{
-margin-top:30px;
-font-size:26px;
+/* hover */
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 28px rgba(0,255,150,0.7);
 }
 
-/* Circle breathing */
-.circle{
-width:160px;
-height:160px;
-margin:40px auto;
-border-radius:50%;
-background:radial-gradient(circle,#00ffcc,#007a66);
-animation:breath 6s infinite;
-}
-
-/* Breathing animation */
-@keyframes breath{
-0%{transform:scale(1);}
-50%{transform:scale(1.3);}
-100%{transform:scale(1);}
-}
-
-/* Text */
-.guide{
+/* TEXT */
+.title{
 font-size:18px;
-margin-top:10px;
+color:#000000; /* contrast dark text */
+font-weight:600;
+}
+/* Audio Player */
+audio{
+margin-top:15px;
+width:100%;
+display:none;
+}
+  header{
+position:relative;
+background:linear-gradient(90deg,#5b2c83,#402060);
+padding:18px;
+font-size:22px;
+font-weight:bold;
+text-align:center;
 }
 
-/* Button */
-.btn{
-margin-top:40px;
-padding:14px 20px;
-background:#ffd700;
-color:#000;
-border:none;
+.backBtn{
+position:absolute;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+text-decoration:none;
+color:white;
+font-size:22px;
+background:rgba(255,255,255,0.1);
+padding:5px 12px;
+border-radius:8px;
+}
+.meditationText{
+font-size:18px;
+line-height:1.7;
+
+color:#ffd700;
+text-align:center;
+
+max-width:320px;
+margin:10px auto 25px auto;  /* 👈 नीचे space बढ़ेगा */
+
+padding:14px 18px;
+
+/* 🌿 frame */
+background:rgba(255,215,0,0.06);
 border-radius:16px;
-font-size:16px;
+border:1px solid rgba(255,215,0,0.4);
+
+/* glow */
+box-shadow:0 0 12px rgba(255,215,120,0.25);
+
+/* text glow */
+text-shadow:0 0 6px rgba(255,215,120,0.6);
+}
+  .meditationText:hover{
+box-shadow:0 0 20px rgba(255,215,120,0.5);
 }
 </style>
 </head>
 
 <body>
 
+<header>
+<a href="../index.html" class="backBtn">←</a>
+🧘 Meditation Audios
+</header>
+
 <div class="container">
-
-<h2>🧘‍♂️ बस सांस पर ध्यान दें</h2>
-
-<div class="circle"></div>
-
-<div class="guide" id="guideText">
-धीरे-धीरे सांस लें...
+<p class="meditationText">
+आंखें बंद करें, गहरी सांस लें…<br>
+बस सुनें, और भीतर उतर जाएं।
+</p>
+<!-- Audio 1 -->
+<div class="card" onclick="playAudio('audio1')">
+<div class="title">🎧 Audio 1</div>
+<audio id="audio1" src="../audio/audio1.mp3" controls></audio>
 </div>
 
-<button class="btn" onclick="goHome()">Home</button>
+<!-- Audio 2 -->
+<div class="card" onclick="playAudio('audio2')">
+<div class="title">🎧 Audio 2</div>
+<audio id="audio2" src="../audio/audio2.mp3" controls></audio>
+</div>
+
+<!-- Audio 3 -->
+<div class="card" onclick="playAudio('audio3')">
+<div class="title">🎧 Audio 3</div>
+<audio id="audio3" src="../audio/audio3.mp3"controls></audio>
+</div>
+
+<!-- Audio 4 -->
+<div class="card" onclick="playAudio('audio4')">
+<div class="title">🎧 Audio 4</div>
+<audio id="audio4" src="../audio/audio4.mp3" controls></audio>
+</div>
 
 </div>
 
 <script>
-let text = document.getElementById("guideText");
+function playAudio(id){
 
-setInterval(()=>{
-if(text.innerText.includes("लें")){
-text.innerText="धीरे-धीरे सांस छोड़ें...";
-}else{
-text.innerText="धीरे-धीरे सांस लें...";
-}
-},3000);
+// sab card normal karo
+document.querySelectorAll(".card").forEach(c=>{
+c.classList.remove("active");
+});
 
-function goHome(){
-window.location.href="../index.html";
+// sab audio band karo
+let audios = document.querySelectorAll("audio");
+audios.forEach(a=>{
+a.pause();
+a.currentTime = 0;
+a.style.display = "none";
+});
+
+// selected audio
+let selected = document.getElementById(id);
+selected.style.display = "block";
+selected.play();
+
+// active card highlight
+selected.parentElement.classList.add("active");
 }
 </script>
 
