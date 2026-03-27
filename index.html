@@ -1113,6 +1113,62 @@ transition:0.25s;
 .topBtn:hover{
 transform:scale(1.1);
 }
+ /* 🔥 RECTANGLE HORIZONTAL SCROLL */
+
+.topCards{
+display:flex;
+gap:16px;
+overflow-x:auto;
+padding:10px 15px;
+
+scrollbar-width:none;
+}
+
+.topCards::-webkit-scrollbar{
+display:none;
+}
+
+/* 🔥 CARD DESIGN */
+
+.topCard{
+flex:0 0 75%;
+max-width:280px;
+
+background:linear-gradient(145deg,#fff7a8,#ffd84d);
+color:#000;
+
+border-radius:18px;
+padding:22px;
+
+text-align:center;
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,0.4),
+0 0 15px rgba(255,215,0,0.3);
+
+transition:0.25s;
+}
+
+/* hover */
+.topCard:hover{
+transform:translateY(-4px) scale(1.02);
+box-shadow:
+0 15px 30px rgba(0,0,0,0.6),
+0 0 25px rgba(255,215,0,0.5);
+}
+
+/* icon */
+.topCard .icon{
+font-size:40px;
+margin-bottom:10px;
+}
+
+/* title */
+.topCard .title{
+font-size:16px;
+font-weight:600;
+}
 </style>
 </head>
 
@@ -1154,15 +1210,28 @@ z-index:9998;
 <!-- 🔥 TOP HORIZONTAL MENU -->
 <div class="topMenu">
 
-  <div class="topBtn" onclick="window.open('pages/maun-chakra.html','_self')">🌀</div>
+ <!-- 🔥 RECTANGLE HORIZONTAL CARDS -->
+<div class="topCards">
 
-  <div class="topBtn" onclick="window.open('pages/antar-darpan.html','_self')">🔮</div>
+  <div class="topCard" onclick="window.open('pages/maun-chakra.html','_self')">
+    <div class="icon">🌀</div>
+    <div class="title">Maun Chakra</div>
+  </div>
 
-  <div class="topBtn" onclick="window.open('pages/gyan-game.html','_self')">🎮</div>
+  <div class="topCard" onclick="window.open('pages/antar-darpan.html','_self')">
+    <div class="icon">🔮</div>
+    <div class="title">Antardarpan</div>
+  </div>
 
-  <div class="topBtn" onclick="window.open('pages/mind-witness-quiz.html','_self')">🕉</div>
+  <div class="topCard" onclick="window.open('pages/gyan-game.html','_self')">
+    <div class="icon">🎮</div>
+    <div class="title">Gyan Game</div>
+  </div>
 
-  <div class="topBtn" onclick="openPage('courses','Divine Access')">✨</div>
+  <div class="topCard" onclick="window.open('pages/mind-witness-quiz.html','_self')">
+    <div class="icon">🕉</div>
+    <div class="title">Quiz</div>
+  </div>
 
 </div>
 <!-- 🔥 MAIN HOOK -->
