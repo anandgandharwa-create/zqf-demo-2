@@ -14,23 +14,29 @@ color:#fff;
 text-align:center;
 }
 
-/* Header */
 header{
-position:relative;
 background:linear-gradient(90deg,#5b2c83,#402060);
 padding:16px;
 font-size:20px;
 font-weight:bold;
+position:relative;
 }
 
-/* Container */
+.back{
+position:absolute;
+left:10px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+}
+
 .container{
 padding:20px;
 max-width:420px;
 margin:auto;
 }
 
-/* Stats Box */
+/* Stats */
 .stats{
 display:flex;
 justify-content:space-between;
@@ -38,136 +44,47 @@ background:#0b1f2d;
 padding:14px;
 border-radius:14px;
 margin-bottom:20px;
-font-size:14px;
 }
 
-/* Cards */
+/* Card */
 .card{
-background:linear-gradient(145deg,#132532,#08131c);
-border-radius:20px;
-padding:20px;
-margin-bottom:16px;
+background:#0f2f1f;
+border-radius:18px;
+padding:18px;
+margin-bottom:14px;
 cursor:pointer;
-position:relative;
-overflow:hidden; 
 }
 
-.locked{
-opacity:0.4;
+/* Breathing */
+.circle{
+width:120px;
+height:120px;
+margin:25px auto;
+border-radius:50%;
+background:#00ffd5;
+box-shadow:0 0 25px #00ffd5;
+transition:0.5s;
 }
 
-/* Lock Label */
-.lockLabel{
-position:absolute;
-top:10px;
-right:12px;
-background:#ff4d4d;
-padding:4px 8px;
-border-radius:8px;
-font-size:12px;
+.grow{
+transform:scale(1.4);
 }
 
-/* Premium Button */
-.premiumBtn{
-background:linear-gradient(45deg,#ffd700,#ffb300);
-color:#000;
-padding:14px;
-border-radius:14px;
-margin-top:15px;
-cursor:pointer;
-font-weight:bold;
+.text{
+color:#7CFF9E;
 }
 
 /* Result */
 .result{
 margin-top:10px;
-color:#7CFF9E;
+color:#ffd700;
 }
 
-/* Back */
-.backArrow{
-position:absolute;
-left:10px;
-top:50%;
-transform:translateY(-50%);
-font-size:22px;
-cursor:pointer;
-color:#fff;
-background:rgba(255,255,255,0.1);
-padding:6px 10px;
-border-radius:10px;
-z-index:9999;
-}
-
-.disabledBtn{
-opacity:0.5;
-cursor:not-allowed;
-background:linear-gradient(45deg,#999,#666);
-color:#ddd;
-box-shadow:none;
-}
-
-/* Breathing Box */
-.breathingBox{
-margin-top:20px;
-margin-bottom:30px;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-height:160px; /* FIX */
-}
-
-/* Circle */
-.circle{
-width:100px;
-height:100px;
-border-radius:50%;
-background:radial-gradient(circle,#00ffd5,#007a6d);
-box-shadow:0 0 25px #00ffd5;
-transition:all 4s ease-in-out;
-
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-}
-
-.circle.grow{
-transform:translate(-50%,-50%) scale(1.5);
-}
-
-/* Text */
-.breathText{
-position:absolute;
-bottom:-25px;
-font-size:16px;
-color:#7CFF9E;
-}
-
-/* Progress Ring */
-.progressRing{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-}
-
-.progressRing circle{
-fill:none;
-stroke-width:6;
-}
-
-.progressRing .bg{
-stroke:#123;
-}
-
-.progressRing .progress{
-stroke:#00ffd5;
-stroke-linecap:round;
-transform:rotate(-90deg);
-transform-origin:50% 50%;
-transition:stroke-dashoffset 1s linear;
+/* Footer */
+.footer{
+margin-top:25px;
+color:#888;
+font-size:13px;
 }
 </style>
 </head>
@@ -175,68 +92,82 @@ transition:stroke-dashoffset 1s linear;
 <body>
 
 <header>
-<span class="backArrow" onclick="window.location.href='../index.html'">←</span>
+<span class="back" onclick="goHome()">←</span>
 🧠 Mind Gym
 </header>
 
 <div class="container">
 
+<!-- Stats -->
 <div class="stats">
 <div>🔥 Streak: <span id="streak">0</span></div>
 <div>⭐ XP: <span id="xp">0</span></div>
 </div>
 
-<div class="card" onclick="completeExercise()">
+<!-- Focus Drill -->
+<div class="card" onclick="startFocus()">
 <h3>🎯 Focus Drill</h3>
-<p>30 सेकंड सांस पर ध्यान दें</p>
-<div id="result" class="result"></div>
+<p>60 सेकंड सांस पर ध्यान दें</p>
+<div id="focusResult" class="result"></div>
 </div>
-
-<div class="breathingBox">
-
-<svg class="progressRing" width="120" height="120">
-  <circle cx="60" cy="60" r="50" class="bg"></circle>
-  <circle cx="60" cy="60" r="50" class="progress" id="progressCircle"></circle>
-</svg>
 
 <div class="circle" id="circle"></div>
-<div class="breathText" id="breathText">श्वास लें</div>
+<div class="text" id="breathText">श्वास लें</div>
 
-</div>
-
-<div class="card locked">
-<div class="lockLabel">🔒 Premium</div>
+<!-- Thought Shift -->
+<div class="card" onclick="thoughtShift()">
 <h3>🔁 Thought Shift</h3>
-<p>विचार बदलने की कला</p>
+<p>Negative → Positive</p>
 </div>
 
-<div class="card locked">
-<div class="lockLabel">🔒 Premium</div>
+<!-- Awareness Drill -->
+<div class="card" onclick="awarenessDrill()">
 <h3>👁 Awareness Drill</h3>
 <p>साक्षी भाव अभ्यास</p>
 </div>
 
-<div class="premiumBtn disabledBtn">
-🚧 Premium Coming Soon
+<div class="footer">
+🔥 रोज 3 मिनट Mind Gym = Powerful Mind
+</div>
+
 </div>
 
 <script>
-let breathingInterval;
-let progressInterval;
-
 let streak = localStorage.getItem("streak") || 0;
 let xp = localStorage.getItem("xp") || 0;
 
 document.getElementById("streak").innerText = streak;
 document.getElementById("xp").innerText = xp;
 
-function completeExercise(){
+/* Focus Drill */
+let interval;
+function startFocus(){
 
-startBreathing();
-startProgress();
+let circle = document.getElementById("circle");
+let text = document.getElementById("breathText");
+
+let time = 60;
+let count = 0;
+
+function breathe(){
+text.innerText="श्वास लें";
+circle.classList.add("grow");
 
 setTimeout(()=>{
-stopBreathing();
+text.innerText="श्वास छोड़ें";
+circle.classList.remove("grow");
+},3000);
+}
+
+breathe();
+interval = setInterval(breathe,6000);
+
+let timer = setInterval(()=>{
+count++;
+
+if(count>=time){
+clearInterval(timer);
+clearInterval(interval);
 
 xp++;
 streak++;
@@ -247,76 +178,34 @@ localStorage.setItem("streak", streak);
 document.getElementById("xp").innerText = xp;
 document.getElementById("streak").innerText = streak;
 
-document.getElementById("result").innerText =
-"🔥 Great! आपने आज का अभ्यास पूरा किया";
-
-},30000);
+document.getElementById("focusResult").innerText="🔥 आपने अभ्यास पूरा किया";
+text.innerText="पूर्ण";
 }
-
-function startBreathing(){
-
-let circle = document.getElementById("circle");
-let text = document.getElementById("breathText");
-
-function breathe(){
-text.innerText = "श्वास लें";
-circle.classList.add("grow");
-
-setTimeout(()=>{
-text.innerText = "श्वास छोड़ें";
-circle.classList.remove("grow");
-},4000);
-}
-
-breathe();
-breathingInterval = setInterval(breathe,8000);
-}
-
-function stopBreathing(){
-
-clearInterval(breathingInterval);
-clearInterval(progressInterval);
-
-let text = document.getElementById("breathText");
-let progressCircle = document.getElementById("progressCircle");
-let circle = document.getElementById("circle");
-
-let radius = 50;
-let circumference = 2 * Math.PI * radius;
-
-progressCircle.style.strokeDashoffset = circumference;
-
-circle.classList.remove("grow");
-text.innerText = "पूर्ण";
-}
-
-function startProgress(){
-
-let circle = document.getElementById("progressCircle");
-
-let radius = 50;
-let circumference = 2 * Math.PI * radius;
-
-circle.style.strokeDasharray = circumference;
-circle.style.strokeDashoffset = circumference;
-
-let time = 30;
-let current = 0;
-
-progressInterval = setInterval(()=>{
-
-current++;
-let offset = circumference - (current / time) * circumference;
-circle.style.strokeDashoffset = offset;
-
-if(current >= time){
-clearInterval(progressInterval);
-}
-
 },1000);
+}
+
+/* Thought Shift */
+function thoughtShift(){
+const thoughts = [
+"मैं असफल हूँ → मैं सीख रहा हूँ",
+"सब गलत है → सब मेरे लिए है",
+"मैं नहीं कर सकता → मैं कोशिश कर सकता हूँ",
+"समस्या है → अवसर है",
+"डर है → विकास है"
+];
+alert(thoughts[Math.floor(Math.random()*thoughts.length)]);
+}
+
+/* Awareness Drill */
+function awarenessDrill(){
+alert("3 चीजें देखें\n3 आवाजें सुनें\nसांस महसूस करें");
+}
+
+/* Home */
+function goHome(){
+window.location.href="../index.html";
 }
 </script>
 
 </body>
 </html>
-```
