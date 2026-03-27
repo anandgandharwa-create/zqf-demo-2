@@ -1068,6 +1068,51 @@ box-shadow:
 0 0 25px rgba(255,215,0,0.6),
 0 0 40px rgba(255,215,0,0.5);
 }
+ /* 🔥 TOP MENU (WiseMonk Style) */
+
+.topMenu{
+display:flex;
+overflow-x:auto;
+gap:14px;
+
+padding:12px 15px;
+margin-top:10px;
+
+scrollbar-width:none;
+}
+
+.topMenu::-webkit-scrollbar{
+display:none;
+}
+
+.topBtn{
+flex:0 0 auto;
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:26px;
+
+background:linear-gradient(145deg,#fff7a8,#ffd84d);
+color:#000;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,0.5),
+0 0 10px rgba(255,215,0,0.4);
+
+cursor:pointer;
+transition:0.25s;
+}
+
+.topBtn:hover{
+transform:scale(1.1);
+}
 </style>
 </head>
 
@@ -1076,7 +1121,7 @@ box-shadow:
 <header id="titleBar">
   <span class="menu-icon" onclick="toggleMenu()">☰</span>
   <span id="backBtn" onclick="goHome()">←</span>
-  <span id="title">Home</span>
+ <span id="title">Zero Quantum Frequency</span>
 </header>
 <div id="overlay" onclick="closeMenu()" 
 style="
@@ -1106,7 +1151,20 @@ z-index:9998;
 
 <!-- HOME -->
 <div id="home" class="container page active">
+<!-- 🔥 TOP HORIZONTAL MENU -->
+<div class="topMenu">
 
+  <div class="topBtn" onclick="window.open('pages/maun-chakra.html','_self')">🌀</div>
+
+  <div class="topBtn" onclick="window.open('pages/antar-darpan.html','_self')">🔮</div>
+
+  <div class="topBtn" onclick="window.open('pages/gyan-game.html','_self')">🎮</div>
+
+  <div class="topBtn" onclick="window.open('pages/mind-witness-quiz.html','_self')">🕉</div>
+
+  <div class="topBtn" onclick="openPage('courses','Divine Access')">✨</div>
+
+</div>
 <!-- 🔥 MAIN HOOK -->
 <h2 style="margin-top:20px;">🧘‍♂️ 2 मिनट में मन शांत करें</h2>
 
@@ -1158,15 +1216,6 @@ Listen Now
 </button>
 
 <hr style="margin:25px 0; opacity:0.2;">
-
-<!-- 🔥 SECONDARY ACTION -->
-<div class="bigCard" onclick="openPage('krishna','Krishna Code')">
-🕉 Ask Krishna
-</div>
-
-<div class="bigCard" onclick="openPage('courses','Divine Access')">
-✨ Divine Access
-</div>
 
 <div class="footer">
 Zero Quantum Frequency™ © Gandharwa Anand
