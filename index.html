@@ -1115,26 +1115,57 @@ transform:scale(1.1);
 }
  /* 🔥 RECTANGLE HORIZONTAL SCROLL (FIXED & PREMIUM) */
 
-.topCards{
+.topCard{
+flex:0 0 85%;
+max-width:320px;
+
+aspect-ratio:1/1;   /* 🔥 square */
+
+background:radial-gradient(circle at 30% 30%,
+#fff7a8 0%,
+#ffe45c 45%,
+#ffd633 100%);
+
+color:#000;
+
+border-radius:22px;
+padding:22px 18px;
+
 display:flex;
-gap:14px;
-overflow-x:auto;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 
-padding:12px 12px 16px 12px;
+scroll-snap-align:center;
 
-width:100%;
-box-sizing:border-box;
+box-shadow:
+0 10px 25px rgba(0,0,0,0.4),
+inset 0 0 18px rgba(255,255,255,0.35);
 
-scroll-snap-type:x mandatory;
-scroll-behavior:smooth;
-
--webkit-overflow-scrolling:touch;
+transition:0.3s;
 }
 
-.topCards::-webkit-scrollbar{
-display:none;
+/* icon */
+.topCard .icon{
+font-size:44px;
+margin-bottom:10px;
 }
 
+/* title */
+.topCard .title{
+font-size:18px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+/* desc */
+.topCard .desc{
+font-size:13px;
+line-height:1.5;
+color:#082567;
+opacity:0.9;
+}
 
 /* 🔥 CARD DESIGN (STABLE SIZE) */
 
@@ -1238,21 +1269,46 @@ z-index:9998;
   <div class="topCard" onclick="window.open('pages/maun-chakra.html','_self')">
     <div class="icon">🌀</div>
     <div class="title">Maun Chakra</div>
+    <div class="desc">
+      मन को शांत करने का पहला कदम<br>
+      भीतर के मौन से जुड़ने के लिए स्पिन करें
+    </div>
   </div>
 
   <div class="topCard" onclick="window.open('pages/antar-darpan.html','_self')">
     <div class="icon">🔮</div>
     <div class="title">Antardarpan</div>
+    <div class="desc">
+      स्वयं को देखने का आंतरिक दर्पण<br>
+      अपने विचारों और भावनाओं को पहचानें
+    </div>
   </div>
 
   <div class="topCard" onclick="window.open('pages/gyan-game.html','_self')">
     <div class="icon">🎮</div>
     <div class="title">Gyan Game</div>
+    <div class="desc">
+      मन की एकाग्रता की जांच करें<br>
+      मन की शांति की परख करें
+    </div>
   </div>
 
   <div class="topCard" onclick="window.open('pages/mind-witness-quiz.html','_self')">
     <div class="icon">🕉</div>
-    <div class="title">Quiz</div>
+    <div class="title">Mind-Witness Quiz</div>
+    <div class="desc">
+      क्या आप मन हैं या साक्षी?<br>
+      इस प्रश्न के साथ भीतर झाँकें
+    </div>
+  </div>
+
+  <div class="topCard" onclick="openPage('courses','Divine Access')">
+    <div class="icon">✨</div>
+    <div class="title">Divine Access</div>
+    <div class="desc">
+      साधना आधारित मार्ग<br>
+      आंतरिक शक्ति को सक्रिय करें
+    </div>
   </div>
 
 </div>
