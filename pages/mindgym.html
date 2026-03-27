@@ -151,6 +151,7 @@ font-size:13px;
 
 <!-- Awareness Drill -->
 <div class="card" onclick="awarenessDrill()">
+<div id="awarenessResult" class="result"></div>
 <h3>👁 Awareness Drill</h3>
 <p>साक्षी भाव अभ्यास</p>
 </div>
@@ -214,7 +215,8 @@ alert(thoughts[Math.floor(Math.random()*thoughts.length)]);
 
 /* Awareness Drill */
 function awarenessDrill(){
-alert("3 चीजें देखें\n3 आवाजें सुनें\nसांस महसूस करें");
+document.getElementById("awarenessResult").innerText =
+"👁 3 चीजें देखें\n🔊 3 आवाजें सुनें\n🌿 सांस महसूस करें";
 }
 
 /* Home */
