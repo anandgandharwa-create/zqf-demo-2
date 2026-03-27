@@ -61,7 +61,7 @@ width:120px;
 height:120px;
 margin:25px auto;
 border-radius:50%;
-
+animation: breathe 6s infinite ease-in-out;
 /* 🌿 Gradient look */
 background:radial-gradient(circle,#00ffd5,#007a6d);
 
@@ -72,7 +72,6 @@ box-shadow:
 0 0 50px rgba(0,255,200,0.25);
 
 /* 🔥 ultra smooth breathing */
-animation: breathe 8s infinite ease-in-out;
 }
 
 /* 🌊 smooth breathing animation */
@@ -106,7 +105,8 @@ color:#7CFF9E;
 /* Result */
 .result{
 margin-top:10px;
-color:#ffd700;
+color:#7CFF9E;
+white-space:pre-line;
 }
 
 /* Footer */
@@ -148,14 +148,14 @@ font-size:13px;
 <h3>🔁 Thought Shift</h3>
 <p>Negative → Positive</p>
 </div>
+<div id="thoughtResult" class="result"></div>
 
-<!-- Awareness Drill -->
+  <!-- Awareness Drill -->
 <div class="card" onclick="awarenessDrill()">
-<div id="awarenessResult" class="result"></div>
 <h3>👁 Awareness Drill</h3>
 <p>साक्षी भाव अभ्यास</p>
 </div>
-
+<div id="awarenessResult" class="result"></div>
 <div class="footer">
 🔥 रोज 3 मिनट Mind Gym = Powerful Mind
 </div>
@@ -176,7 +176,9 @@ function startFocus(){
 let circle = document.getElementById("circle");
 let text = document.getElementById("breathText");
 
-let time = 60;
+circle.classList.add("breathing"); // 🔥 start animation
+
+let time = 30;
 let count = 0;
 
 let timer = setInterval(()=>{
@@ -185,6 +187,7 @@ count++;
 if(count>=time){
 clearInterval(timer);
 clearInterval(interval);
+circle.classList.remove("breathing");
 
 xp++;
 streak++;
@@ -210,7 +213,9 @@ const thoughts = [
 "समस्या है → अवसर है",
 "डर है → विकास है"
 ];
-alert(thoughts[Math.floor(Math.random()*thoughts.length)]);
+
+document.getElementById("thoughtResult").innerText =
+thoughts[Math.floor(Math.random()*thoughts.length)];
 }
 
 /* Awareness Drill */
