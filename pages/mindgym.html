@@ -61,43 +61,20 @@ width:120px;
 height:120px;
 margin:25px auto;
 border-radius:50%;
-animation: breathe 6s infinite ease-in-out;
-/* 🌿 Gradient look */
+
+/* 🌿 look */
 background:radial-gradient(circle,#00ffd5,#007a6d);
 
-/* ✨ soft glow */
 box-shadow:
 0 0 10px rgba(0,255,200,0.3),
 0 0 25px rgba(0,255,200,0.5),
 0 0 50px rgba(0,255,200,0.25);
 
-/* 🔥 ultra smooth breathing */
+/* ❌ animation removed */
 }
-
-/* 🌊 smooth breathing animation */
-@keyframes breathe{
-0%{
-transform:scale(1);
-box-shadow:
-0 0 10px rgba(0,255,200,0.2),
-0 0 20px rgba(0,255,200,0.3);
+.breathing{
+animation: breathe 6s infinite ease-in-out;
 }
-
-50%{
-transform:scale(1.45);
-box-shadow:
-0 0 25px rgba(0,255,200,0.6),
-0 0 60px rgba(0,255,200,0.8);
-}
-
-100%{
-transform:scale(1);
-box-shadow:
-0 0 10px rgba(0,255,200,0.2),
-0 0 20px rgba(0,255,200,0.3);
-}
-}
-
 .text{
 color:#7CFF9E;
 }
@@ -172,22 +149,31 @@ document.getElementById("xp").innerText = xp;
 /* Focus Drill */
 let interval;
 function startFocus(){
-
 let circle = document.getElementById("circle");
 let text = document.getElementById("breathText");
 
 circle.classList.add("breathing"); // 🔥 start animation
-
+text.innerText = "श्वास लें";
 let time = 30;
 let count = 0;
+
+/* 🔥 TEXT CHANGE LOOP */
+let breathInterval = setInterval(()=>{
+if(text.innerText.includes("लें")){
+text.innerText="श्वास छोड़ें";
+}else{
+text.innerText="श्वास लें";
+}
+},3000);
 
 let timer = setInterval(()=>{
 count++;
 
 if(count>=time){
 clearInterval(timer);
-clearInterval(interval);
-circle.classList.remove("breathing");
+clearInterval(breathInterval);
+
+circle.classList.remove("breathing"); // 🔥 stop
 
 xp++;
 streak++;
