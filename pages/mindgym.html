@@ -61,13 +61,42 @@ width:120px;
 height:120px;
 margin:25px auto;
 border-radius:50%;
-background:#00ffd5;
-box-shadow:0 0 25px #00ffd5;
-transition:0.5s;
+
+/* 🌿 Gradient look */
+background:radial-gradient(circle,#00ffd5,#007a6d);
+
+/* ✨ soft glow */
+box-shadow:
+0 0 10px rgba(0,255,200,0.3),
+0 0 25px rgba(0,255,200,0.5),
+0 0 50px rgba(0,255,200,0.25);
+
+/* 🔥 ultra smooth breathing */
+animation: breathe 8s infinite ease-in-out;
 }
 
-.grow{
-transform:scale(1.4);
+/* 🌊 smooth breathing animation */
+@keyframes breathe{
+0%{
+transform:scale(1);
+box-shadow:
+0 0 10px rgba(0,255,200,0.2),
+0 0 20px rgba(0,255,200,0.3);
+}
+
+50%{
+transform:scale(1.45);
+box-shadow:
+0 0 25px rgba(0,255,200,0.6),
+0 0 60px rgba(0,255,200,0.8);
+}
+
+100%{
+transform:scale(1);
+box-shadow:
+0 0 10px rgba(0,255,200,0.2),
+0 0 20px rgba(0,255,200,0.3);
+}
 }
 
 .text{
@@ -148,19 +177,6 @@ let text = document.getElementById("breathText");
 
 let time = 60;
 let count = 0;
-
-function breathe(){
-text.innerText="श्वास लें";
-circle.classList.add("grow");
-
-setTimeout(()=>{
-text.innerText="श्वास छोड़ें";
-circle.classList.remove("grow");
-},3000);
-}
-
-breathe();
-interval = setInterval(breathe,6000);
 
 let timer = setInterval(()=>{
 count++;
