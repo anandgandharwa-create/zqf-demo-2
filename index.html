@@ -1062,63 +1062,38 @@ box-shadow:
 }
 
 .askQuestionBtn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-
-padding:10px 20px;
-font-size:13.5px;
-font-weight:600;
-
-border-radius:40px;
+display:inline-block;   /* 🔥 flex हटाओ */
+padding:12px 26px;
 
 background:linear-gradient(135deg,#ffd700,#ffb300);
 color:#1a1a1a;
 
-position:relative;
-overflow:hidden;
-cursor:pointer;
-
-border:1px solid rgba(255,215,0,0.6);
-box-shadow:
-0 0 8px rgba(255,215,0,0.5),
-0 0 18px rgba(255,215,0,0.25),
-inset 0 0 6px rgba(255,255,255,0.2);
-
-transition:all 0.3s ease;
-letter-spacing:0.4px;
-}
-
-/* shine */
-.askQuestionBtn::after{
-content:'';
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
 border-radius:40px;
+font-weight:600;
+font-size:14px;
 
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.6),
-transparent
-);
+border:1px solid rgba(255,215,0,0.7);
 
-transition:0.5s;
-}
-
-.askQuestionBtn:hover{
-transform:scale(1.06);
 box-shadow:
-0 0 12px rgba(255,215,0,0.9),
-0 0 28px rgba(255,215,0,0.5),
-inset 0 0 10px rgba(255,255,255,0.3);
+0 0 12px rgba(255,215,0,0.7),
+0 0 30px rgba(255,215,0,0.4);
+
+cursor:pointer;
+transition:0.3s;
 }
 
-.askQuestionBtn:hover::after{
-left:100%;
+/* hover */
+.askQuestionBtn:hover{
+transform:scale(1.08);
+box-shadow:
+0 0 20px rgba(255,215,0,1),
+0 0 40px rgba(255,215,0,0.6);
+}
+ .askWrap{
+width:100%;
+display:flex;
+justify-content:center;
+margin:18px 0;
 }
 </style>
 </head>
@@ -1190,8 +1165,10 @@ Return to your original state
 
 <!-- 🔮 ASK QUESTION BUTTON (NEW) -->
 
-<div class="askQuestionBtn" onclick="location.href='pages/mann-ke-prashn.html'">
-✨ अपने मन का उत्तर अभी जानें
+<div class="askWrap">
+  <div class="askQuestionBtn" onclick="location.href='pages/mann-ke-prashn.html'">
+    ✨ अपने मन का उत्तर अभी जानें
+  </div>
 </div>
 
 
