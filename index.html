@@ -1095,6 +1095,71 @@ display:flex;
 justify-content:center;
 margin:18px 0;
 }
+ /* ===== FLOATING CTA ===== */
+
+.floatingCTA{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+
+padding:12px 26px;
+font-size:14px;
+font-weight:600;
+
+border-radius:40px;
+background:linear-gradient(135deg,#ffd700,#ffb300);
+color:#1a1a1a;
+
+cursor:pointer;
+z-index:9999;
+
+/* GLOW */
+box-shadow:
+0 0 15px rgba(255,215,0,0.8),
+0 0 35px rgba(255,215,0,0.5),
+inset 0 0 10px rgba(255,255,255,0.4);
+
+border:1px solid rgba(255,215,0,0.7);
+
+transition:all 0.3s ease;
+
+/* Pulse animation */
+animation:ctaPulse 2s infinite;
+}
+
+/* Hover */
+.floatingCTA:hover{
+transform:translateX(-50%) scale(1.08);
+box-shadow:
+0 0 25px rgba(255,215,0,1),
+0 0 50px rgba(255,215,0,0.7),
+inset 0 0 12px rgba(255,255,255,0.5);
+}
+
+/* Click */
+.floatingCTA:active{
+transform:translateX(-50%) scale(0.95);
+}
+
+/* Pulse animation */
+@keyframes ctaPulse{
+0%{
+box-shadow:
+0 0 10px rgba(255,215,0,0.5),
+0 0 25px rgba(255,215,0,0.3);
+}
+50%{
+box-shadow:
+0 0 20px rgba(255,215,0,1),
+0 0 45px rgba(255,215,0,0.7);
+}
+100%{
+box-shadow:
+0 0 10px rgba(255,215,0,0.5),
+0 0 25px rgba(255,215,0,0.3);
+}
+}
 </style>
 </head>
 
@@ -1730,6 +1795,9 @@ text-align:center;
 ">
 🚀 New Update Available<br><br>
 <button onclick="updateApp()">Update Now</button>
+</div>
+ <div class="floatingCTA" onclick="location.href='pages/mann-ke-prashn.html'">
+  🔮 अपना उत्तर अभी प्राप्त करें
 </div>
 </body>
 </html>
