@@ -301,17 +301,17 @@ if(premium!=="yes" && used>=dailyLimit){
 // loading effect
 let ans = document.getElementById("ans");
 
-ans.innerHTML = '<span style="color:#FFD700;text-shadow:0 0 6px rgba(255,215,0,0.6)">✨ संदेश प्राप्त हो रहा है... प्रतीक्षा करें...</span>';
+ans.innerHTML = '<span style="color:#FFD700">✨ संदेश प्राप्त हो रहा है...</span>';
 
 setTimeout(()=>{
 
-ans.innerHTML = '<span style="color:#FFD700">✨ संदेश प्राप्त हो रहा है... प्रतीक्षा करें...</span><br><br>' + selected.a;
+ans.innerHTML = selected.a;   // 🔥 सिर्फ answer दिखेगा
 
-  if(premium!=="yes"){
-    used++;
-    localStorage.setItem("used",used);
-    update();
-  }
+if(premium!=="yes"){
+  used++;
+  localStorage.setItem("used",used);
+  update();
+}
 
 },3000);
 
