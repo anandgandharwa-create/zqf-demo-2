@@ -8,8 +8,8 @@
 <meta http-equiv="Expires" content="0">
 <title>Zero Quantum Frequency™</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#ffffff">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#5b2c83">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
 html, body{
 margin:0;
@@ -350,18 +350,31 @@ max-width:380px;
 text-align:center;
 }
 .gitaShlok{
-color:#ffffff;
-font-style:normal;
-font-size:18px;
-line-height:1.9;
-max-width:380px;
-margin:14px auto;
-font-weight:500;
-letter-spacing:0.4px;
+background: linear-gradient(145deg,#0f2a2a,#051515);
+border-radius:16px;
+padding:16px 14px;
 
-/* ✨ Divine Glow */
+color:#00ffd5;
+font-size:18px;
+line-height:1.6;
+text-align:center;
+
+max-width:380px;
+margin:18px auto;
+
+font-weight:600;
+letter-spacing:0.5px;
+
+/* Glow */
+box-shadow: 0 0 18px rgba(0,255,200,0.25);
+
+/* Divine Text Glow */
 text-shadow:
-0 0 6px rgba(255, 235, 150, 0.55),
+0 0 6px rgba(0,255,200,0.6),
+0 0 12px rgba(0,255,200,0.3);
+
+/* Border */
+border:1px solid rgba(0,255,200,0.25);
 }
   .coursePromo{
 max-width:380px;
@@ -1038,192 +1051,6 @@ transform:translateY(-5px);
 box-shadow:
 0 0 30px rgba(255,215,0,0.6);
 }
- .bigCard{
-width:90%;
-max-width:360px;
-margin:14px auto;
-padding:20px;
-border-radius:20px;
-
-font-size:18px;
-font-weight:600;
-text-align:center;
-cursor:pointer;
-
-/* 🌟 Yellow premium look */
-background:linear-gradient(45deg,#ffd700,#ffb300);
-color:#000;
-
-/* ✨ glow */
-box-shadow:
-0 0 15px rgba(255,215,0,0.4),
-0 0 30px rgba(255,215,0,0.3);
-
-transition:0.3s;
-}
-
-.bigCard:hover{
-transform:scale(1.05);
-box-shadow:
-0 0 25px rgba(255,215,0,0.6),
-0 0 40px rgba(255,215,0,0.5);
-}
- /* 🔥 TOP MENU (WiseMonk Style) */
-
-.topMenu{
-display:flex;
-overflow-x:auto;
-gap:14px;
-
-padding:12px 15px;
-margin-top:10px;
-
-scrollbar-width:none;
-}
-
-.topMenu::-webkit-scrollbar{
-display:none;
-}
-
-.topBtn{
-flex:0 0 auto;
-
-width:70px;
-height:70px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:26px;
-
-background:linear-gradient(145deg,#fff7a8,#ffd84d);
-color:#000;
-
-box-shadow:
-0 5px 15px rgba(0,0,0,0.5),
-0 0 10px rgba(255,215,0,0.4);
-
-cursor:pointer;
-transition:0.25s;
-}
-
-.topBtn:hover{
-transform:scale(1.1);
-}
- /* 🔥 RECTANGLE HORIZONTAL SCROLL (FIXED & PREMIUM) */
-
-.topCard{
-flex:0 0 85%;
-max-width:320px;
-
-aspect-ratio:1/1;   /* 🔥 square */
-
-background:radial-gradient(circle at 30% 30%,
-#fff7a8 0%,
-#ffe45c 45%,
-#ffd633 100%);
-
-color:#000;
-
-border-radius:22px;
-padding:22px 18px;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-
-scroll-snap-align:center;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,0.4),
-inset 0 0 18px rgba(255,255,255,0.35);
-
-transition:0.3s;
-}
-
-/* icon */
-.topCard .icon{
-font-size:44px;
-margin-bottom:10px;
-}
-
-/* title */
-.topCard .title{
-font-size:18px;
-font-weight:700;
-margin-bottom:8px;
-}
-
-/* desc */
-.topCard .desc{
-font-size:13px;
-line-height:1.5;
-color:#082567;
-opacity:0.9;
-}
-
-/* 🔥 CARD DESIGN (STABLE SIZE) */
-
-.topCard{
-flex:0 0 85%;              /* 👈 main fix */
-max-width:320px;
-
-background:linear-gradient(145deg,#fff7a8,#ffd84d);
-color:#000;
-
-border-radius:18px;
-padding:20px;
-
-text-align:center;
-cursor:pointer;
-
-scroll-snap-align:center;  /* 👈 smooth center scroll */
-
-box-shadow:
-0 8px 20px rgba(0,0,0,0.35),
-0 0 12px rgba(255,215,0,0.25);
-
-transition:0.3s ease;
-}
-
-
-/* 🔥 HOVER (desktop only feel) */
-.topCard:hover{
-transform:translateY(-4px) scale(1.02);
-
-box-shadow:
-0 12px 28px rgba(0,0,0,0.5),
-0 0 20px rgba(255,215,0,0.45);
-}
-
-
-/* 🔥 ICON */
-.topCard .icon{
-font-size:38px;
-margin-bottom:8px;
-}
-
-
-/* 🔥 TITLE */
-.topCard .title{
-font-size:17px;
-font-weight:600;
-}
-
-
-/* 🔥 FIRST & LAST CARD SPACING FIX */
-.topCard:first-child{
-margin-left:4px;
-}
-
-.topCard:last-child{
-margin-right:10px;
-}
 </style>
 </head>
 
@@ -1232,7 +1059,7 @@ margin-right:10px;
 <header id="titleBar">
   <span class="menu-icon" onclick="toggleMenu()">☰</span>
   <span id="backBtn" onclick="goHome()">←</span>
- <span id="title">Zero Quantum Frequency</span>
+  <span id="title">Home</span>
 </header>
 <div id="overlay" onclick="closeMenu()" 
 style="
@@ -1263,106 +1090,60 @@ z-index:9998;
 <!-- HOME -->
 <div id="home" class="container page active">
 
- <!-- 🔥 RECTANGLE HORIZONTAL CARDS -->
-<div class="topCards">
+<div class="homeTop">
 
-  <div class="topCard" onclick="window.open('pages/maun-chakra.html','_self')">
-    <div class="icon">🌀</div>
-    <div class="title">Maun Chakra</div>
-    <div class="desc">
-      मन को शांत करने का पहला कदम<br>
-      भीतर के मौन से जुड़ने के लिए स्पिन करें
-    </div>
-  </div>
+<div class="welcome">Welcome</div>
 
-  <div class="topCard" onclick="window.open('pages/antar-darpan.html','_self')">
-    <div class="icon">🔮</div>
-    <div class="title">Antardarpan</div>
-    <div class="desc">
-      स्वयं को देखने का आंतरिक दर्पण<br>
-      अपने विचारों और भावनाओं को पहचानें
-    </div>
-  </div>
+<div class="appTitle">
+Zero Quantum Frequency™
+</div>
 
-  <div class="topCard" onclick="window.open('pages/gyan-game.html','_self')">
-    <div class="icon">🎮</div>
-    <div class="title">Gyan Game</div>
-    <div class="desc">
-      मन की एकाग्रता की जांच करें<br>
-      मन की शांति की परख करें
-    </div>
-  </div>
-
-  <div class="topCard" onclick="window.open('pages/mind-witness-quiz.html','_self')">
-    <div class="icon">🕉</div>
-    <div class="title">Mind-Witness Quiz</div>
-    <div class="desc">
-      क्या आप मन हैं या साक्षी?<br>
-      इस प्रश्न के साथ भीतर झाँकें
-    </div>
-  </div>
-
-  <div class="topCard" onclick="openPage('courses','Divine Access')">
-    <div class="icon">✨</div>
-    <div class="title">Divine Access</div>
-    <div class="desc">
-      साधना आधारित मार्ग<br>
-      आंतरिक शक्ति को सक्रिय करें
-    </div>
-  </div>
+<div class="tagline">
+Return to your original state
+</div>
 
 </div>
-<!-- 🔥 MAIN HOOK -->
-<h2 style="margin-top:20px;">🧘‍♂️ 2 मिनट में मन शांत करें</h2>
 
-<p style="color:#ccc;">
-Zero Quantum Frequency™
-</p>
 
-<!-- 🔥 MAIN BUTTON -->
-<button onclick="location.href='pages/meditation.html'" 
-style="
-background:#ffd700;
-color:#000;
-padding:16px 20px;
-border:none;
-border-radius:16px;
-font-size:18px;
-margin-top:15px;
-width:90%;
-max-width:350px;
-">
-👉 Start Meditation
-</button>
+<!-- DAILY KRISHNA MESSAGE -->
 
-<!-- 🔥 BENEFITS -->
-<p style="margin-top:15px; color:#aaa;">
-✔ तनाव कम करें <br>
-✔ मन शांत करें <br>
-✔ तुरंत असर महसूस करें
-</p>
+<div class="dailyCard">
 
-<hr style="margin:25px 0; opacity:0.2;">
+<div class="dailyTitle">✨ आज का संकेत</div>
 
-<!-- 🕉 DAILY MESSAGE -->
-<h3>🕉 आज का संदेश</h3>
+<div class="dailyText">
+“जब मन इच्छाओं, तुलना और डर से मुक्त होने लगता है तब भीतर एक ऐसी शांति जन्म लेती है जो 
+ किसी भी बाहरी परिस्थिति से प्रभावित नहीं होती। यही शांति वास्तविक शक्ति है और यही सच्चा सुख।”
+</div>
 
-<p style="font-size:15px; line-height:1.6;">
-“संसार के सभी दृश्य मृगतृष्णा के समान हैं...”
-</p>
+</div>
 
-<button style="
-background:#444;
-color:#fff;
-padding:10px 16px;
-border:none;
-border-radius:12px;
-margin-top:10px;
-">
-Listen Now
-</button>
 
-<hr style="margin:25px 0; opacity:0.2;">
+<!-- MAIN MENU -->
+
+<div class="menuGrid">
+
+<div class="menuCard highlight" onclick="openPage('courses','Divine Access')">
+<span class="menuIcon">✨</span>
+Divine Access
+</div>
+
+<div class="menuCard" onclick="openPage('krishna','Krishna Code')">
+<span class="menuIcon">🕉</span>
+Krishna Code
+</div>
+
+<div class="menuCard" onclick="location.href='pages/mindos.html'">
+<span class="menuIcon">🧠</span>
+Mind OS
+</div>
+
+<div class="menuCard small" onclick="openPage('about','About Us')">
+<span class="menuIcon">🧭</span>
+About
+</div>
+
+</div>
 
 <div class="footer">
 Zero Quantum Frequency™ © Gandharwa Anand
@@ -1521,12 +1302,6 @@ SRINAGAR, J & K
 <div class="coursePromo">
 <div class="coursePromoTitle">Divine Access</div>
 
- <p>
-संदेह को भूखा रखो, निर्णय को खिलाओ, अनुशासन को भोजन दो।
-शांति को गहराई से समझोगे तभी ही शांत रह पाओगे;
-किसी अंधविश्वास से नहीं बल्कि जागरूकता से समझोगे। 
-इसे हमारे ऐप के माध्यम से समझने का प्रयास करें..
-</p>
 <p>
 हर अभ्यास आपको धीरे-धीरे उस बिंदु तक ले जाएगा
 जहाँ विचारों का भार हल्का होने लगता है
@@ -1595,37 +1370,50 @@ Krishna Oracle
   गीता - ज्ञान
 </div>
 <p class="gitaShlok">
-समोऽहं सर्वभूतेषु न मे द्वेष्योऽस्ति न प्रियः।<br>
-ये भजन्ति तु मां भक्त्या मयि ते तेषु चाप्यहम्॥ 9.29॥
+यो मां पश्यति सर्वत्र<br>
+सर्वं च मयि पश्यति।<br>
+तस्याहं न प्रणश्यामि<br>
+स च मे न प्रणश्यति॥ 6.30॥
 </p>
 
-<p class="quote">
-भगवान कहते हैं कि मैं सभी प्राणियों में समान रूप से स्थित हूँ। न कोई मेरा प्रिय है, न कोई अप्रिय। लेकिन जो मुझे सच्ची भक्ति से याद करता है, वह मुझमें स्थित हो जाता है और मैं उसमें प्रकट हो जाता हूँ।
-</p>
+ <p class="quote">
+  भगवान कहते हैं कि जो व्यक्ति मुझे हर जगह देखता है और हर चीज़ को मुझमें देखता है, 
+  उसके लिए मैं कभी ओझल नहीं होता और वह भी मुझसे कभी दूर नहीं होता।
+  </p>
 
 <div class="divider"></div>
 
 <div class="longtext">
 
 <p>
-गीता के इस श्लोक में भगवान श्रीकृष्ण अपनी निष्पक्षता और समत्व का गूढ़ सिद्धांत बताते हैं। वे स्पष्ट करते हैं कि ईश्वर किसी के साथ पक्षपात नहीं करते। उनके लिए सभी जीव समान हैं - न कोई विशेष प्रिय है, न कोई अप्रिय। यह ब्रह्म का स्वभाव है कि वह सबमें समान रूप से व्याप्त रहता है।
-</p>
+    गीता के इस श्लोक में भगवान श्रीकृष्ण एक अत्यंत गहरे आध्यात्मिक सत्य को प्रकट करते हैं। 
+    वे बताते हैं कि जब साधक की दृष्टि इतनी निर्मल और व्यापक हो जाती है कि वह हर जीव, हर वस्तु और हर परिस्थिति में ईश्वर का अनुभव करने लगता है, 
+    तब उसके लिए संसार और ईश्वर के बीच का भेद समाप्त हो जाता है।
+    </p>
 
-<p>
-लेकिन यहाँ एक सूक्ष्म रहस्य है - जो व्यक्ति भगवान की सच्ची भक्ति करता है, वह ईश्वर के अधिक निकट अनुभव करता है। इसका कारण यह नहीं कि भगवान पक्षपाती हैं, बल्कि इसलिए कि उस व्यक्ति का मन शुद्ध होकर ईश्वर से जुड़ जाता है। जैसे सूर्य सब पर समान प्रकाश देता है, परंतु जो व्यक्ति खिड़की खोलता है, वही प्रकाश को अधिक अनुभव करता है।
-</p>
+    <p>
+    यह केवल बौद्धिक समझ नहीं, बल्कि एक जीवंत अनुभव है। जब व्यक्ति अपने अहंकार, द्वेष और भेदभाव को त्याग देता है, 
+    तब उसकी चेतना शुद्ध होकर उस स्तर पर पहुँचती है जहाँ उसे हर ओर वही दिव्यता दिखाई देती है। 
+    ऐसी अवस्था में ईश्वर उसके लिए कोई दूर की सत्ता नहीं रहते, बल्कि हर क्षण उसके साथ अनुभव होते हैं।
+    </p>
 
-<p>
-जब व्यक्ति अहंकार, द्वेष और भेदभाव को छोड़कर प्रेम और समर्पण के साथ ईश्वर का स्मरण करता है, तब उसके भीतर ईश्वर की उपस्थिति प्रकट होने लगती है। यह एक आंतरिक अनुभव है, जहाँ भक्त और भगवान के बीच की दूरी मिट जाती है।
-</p>
+    <p>
+    जब साधक हर परिस्थिति में, सुख-दुःख में, लाभ-हानि में, ईश्वर को ही देखता है, 
+    तब उसका मन स्थिर, शांत और निर्भय हो जाता है। उसे यह बोध हो जाता है कि वह कभी अकेला नहीं है, 
+    क्योंकि ईश्वर हर समय उसके साथ हैं और वह स्वयं भी ईश्वर से अलग नहीं है।
+    </p>
 
-<p>
-इस श्लोक का संदेश यह है कि ईश्वर तक पहुँचने के लिए किसी विशेष योग्यता या स्थिति की आवश्यकता नहीं है। केवल सच्ची भक्ति, समर्पण और निर्मल हृदय ही पर्याप्त हैं। जो व्यक्ति ऐसा करता है, वह ईश्वर को अपने भीतर ही अनुभव करने लगता है।
-</p>
+    <p>
+    इस श्लोक का सार यह है कि सच्ची भक्ति और ज्ञान वही है जिसमें व्यक्ति हर जगह ईश्वर को देखे और अपने भीतर भी उसी परम सत्ता का अनुभव करे। 
+    जब यह दृष्टि विकसित हो जाती है, तब जीवन में एक अद्भुत शांति, प्रेम और समृद्धि का अनुभव होता है।
+    </p>
 
-<p><strong>गीता का संदेश:</strong><br>
-ईश्वर सभी में समान हैं, लेकिन जो उन्हें सच्चे हृदय से भजता है, वह ईश्वर के साक्षात अनुभव के सबसे निकट पहुँच जाता है।
-</p>
+    <p>
+    <strong>गीता का संदेश:</strong><br>
+    जो व्यक्ति हर जगह ईश्वर को देखता है और हर चीज़ को ईश्वर में देखता है, 
+    वह कभी ईश्वर से दूर नहीं होता और ईश्वर भी उससे कभी दूर नहीं होते।
+    </p>
+
 <!-- Krishna YouTube Button -->
 <div style="text-align:center; margin-top:30px;">
 
@@ -1847,7 +1635,7 @@ function krishnaOracle(){
     "मौन में जाओ - वहीं सत्य स्पष्ट होता है।",
     "अहंकार छोड़ते ही मार्ग खुलने लगता है।",
     "जहाँ प्रेम है, वहीं कृष्ण का मार्ग है।",
-    "चिंता छोड़ो — जीवन तुम्हें सही दिशा दे रहा है।"
+    "चिंता छोड़ो - जीवन तुम्हें सही दिशा दे रहा है।"
   ];
 
   const randomMessage = messages[Math.floor(Math.random()*messages.length)];
