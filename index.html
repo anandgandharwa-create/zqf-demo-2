@@ -1061,8 +1061,8 @@ box-shadow:
   text-align: center;
 }
 
-.askButton{
-display:inline-flex;              /* FIX: proper box */
+.askQuestionBtn{
+display:inline-flex;
 align-items:center;
 justify-content:center;
 
@@ -1070,17 +1070,15 @@ padding:10px 20px;
 font-size:13.5px;
 font-weight:600;
 
-border-radius:40px;              /* smoother pill */
+border-radius:40px;
 
 background:linear-gradient(135deg,#ffd700,#ffb300);
 color:#1a1a1a;
-text-decoration:none;
 
 position:relative;
 overflow:hidden;
 cursor:pointer;
 
-/* GOLDEN BOX LOOK */
 border:1px solid rgba(255,215,0,0.6);
 box-shadow:
 0 0 8px rgba(255,215,0,0.5),
@@ -1091,8 +1089,8 @@ transition:all 0.3s ease;
 letter-spacing:0.4px;
 }
 
-/* Shine layer */
-.askButton::after{
+/* shine */
+.askQuestionBtn::after{
 content:'';
 position:absolute;
 top:0;
@@ -1111,8 +1109,7 @@ transparent
 transition:0.5s;
 }
 
-/* Hover effect */
-.askButton:hover{
+.askQuestionBtn:hover{
 transform:scale(1.06);
 box-shadow:
 0 0 12px rgba(255,215,0,0.9),
@@ -1120,14 +1117,8 @@ box-shadow:
 inset 0 0 10px rgba(255,255,255,0.3);
 }
 
-/* Shine animation */
-.askButton:hover::after{
+.askQuestionBtn:hover::after{
 left:100%;
-}
-
-/* Click effect */
-.askButton:active{
-transform:scale(0.96);
 }
 </style>
 </head>
