@@ -527,31 +527,47 @@ margin-top:10px;
 }
 
 .menuCard{
-background:linear-gradient(145deg,#132532,#0a1823);
-border-radius:20px;
-padding:24px 12px;
-font-size:16px;
-color:#fff;
-cursor:pointer;
-transition:0.25s;
-font-weight:600;
+  position: relative;
+  overflow: hidden;
 
-box-shadow:
-0 10px 25px rgba(0,0,0,0.6),
-inset 0 0 10px rgba(255,255,255,0.03);
+  background: linear-gradient(145deg,#132532,#0a1823);
+  border-radius:20px;
+  padding:24px 12px;
+  font-size:16px;
+  color:#fff;
+  cursor:pointer;
+  transition:0.25s;
+  font-weight:600;
 
-text-align:center;
+  /* 🔥 NO BLINK / NO GLOW */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+
+  text-align:center;
 }
+
+/* simple hover (premium feel) */
+.menuCard:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+}
+
 /* ⭐ About page cards yellow */
 .aboutTopMenu .menuCard{
-background:linear-gradient(145deg,#fff7a8,#ffd84d);
-color:#000;
+  background:linear-gradient(145deg,#fff7a8,#ffd84d);
+  color:#000;
 
-box-shadow:
-0 10px 25px rgba(0,0,0,0.5),
-0 0 18px rgba(255,215,0,0.35);
+  box-shadow:
+  0 10px 25px rgba(0,0,0,0.5),
+  0 0 18px rgba(255,215,0,0.35);
+
+  /* 🔥 animation force OFF */
+  animation:none !important;
 }
 
+/* shine effect OFF */
+.menuCard::before{
+  display:none !important;
+}
 /* hover yellow cards */
 .aboutTopMenu .menuCard:hover{
 transform:translateY(-4px);
@@ -1061,39 +1077,56 @@ box-shadow:
   text-align: center;
 }
 
+@keyframes yellowBlink {
+  0% {
+    box-shadow:
+      0 0 10px rgba(255,215,0,0.5),
+      0 0 20px rgba(255,215,0,0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(255,215,0,1),
+      0 0 50px rgba(255,215,0,0.7);
+    transform: scale(1.06);
+  }
+  100% {
+    box-shadow:
+      0 0 10px rgba(255,215,0,0.5),
+      0 0 20px rgba(255,215,0,0.3);
+    transform: scale(1);
+  }
+}
+
 .askQuestionBtn{
-display:inline-block;   /* 🔥 flex हटाओ */
-padding:12px 26px;
+  display:inline-block;
+  padding:12px 26px;
 
-background:linear-gradient(135deg,#ffd700,#ffb300);
-color:#1a1a1a;
+  background:linear-gradient(135deg,#ffd700,#ffb300);
+  color:#1a1a1a;
 
-border-radius:40px;
-font-weight:600;
-font-size:14px;
+  border-radius:40px;
+  font-weight:600;
+  font-size:14px;
 
-border:1px solid rgba(255,215,0,0.7);
+  border:1px solid rgba(255,215,0,0.7);
 
-box-shadow:
-0 0 12px rgba(255,215,0,0.7),
-0 0 30px rgba(255,215,0,0.4);
+  cursor:pointer;
 
-cursor:pointer;
-transition:0.3s;
+  /* 🔥 BLINK EFFECT */
+  animation: yellowBlink 1.5s infinite;
 }
 
-/* hover */
+/* hover (blink के ऊपर extra boost) */
 .askQuestionBtn:hover{
-transform:scale(1.08);
-box-shadow:
-0 0 20px rgba(255,215,0,1),
-0 0 40px rgba(255,215,0,0.6);
+  transform: scale(1.1);
 }
+
 .askWrap{
-width:100%;
-display:flex;
-justify-content:center;
-margin:20px 0 25px 0;   /* 👈 ऊपर 20, नीचे 25 (balanced gap) */
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin:20px 0 25px 0;
 }
 </style>
 </head>
