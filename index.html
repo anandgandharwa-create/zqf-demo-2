@@ -1132,6 +1132,23 @@ box-shadow:
   justify-content:center;
   margin:20px 0 25px 0;
 }
+ .audioBtn {
+  background: linear-gradient(135deg, #6a5cff, #00c6ff);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding: 14px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 12px;
+  box-shadow: 0 0 20px rgba(106, 92, 255, 0.7);
+  transition: 0.3s;
+}
+
+.audioBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 198, 255, 0.9);
+}
 </style>
 </head>
 
@@ -1207,7 +1224,13 @@ Return to your original state
     ✨ अपने मन का उत्तर अभी जानें
   </div>
 </div>
+<!-- 🎧 आज का ऑडियो बटन -->
 
+<div class="askWrap">
+  <div class="askQuestionBtn" onclick="location.href='pages/aaj-ka-audio.html'">
+    🎧 आज का ऑडियो सुनें
+  </div>
+</div>
 
 <!-- MAIN MENU -->
 
