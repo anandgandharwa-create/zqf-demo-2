@@ -1157,7 +1157,7 @@ box-shadow:
 <header id="titleBar">
   <span class="menu-icon" onclick="toggleMenu()">☰</span>
   <span id="backBtn" onclick="goHome()">←</span>
-  <span id="title">Home</span>
+ <span id="title">Zero Quantum Frequency™</span>
 </header>
 <div id="overlay" onclick="closeMenu()" 
 style="
@@ -1618,7 +1618,11 @@ function openPage(id, title){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 
+if(id === "home"){
+  document.getElementById('title').innerText = "Zero Quantum Frequency™";
+}else{
   document.getElementById('title').innerText = title;
+}
 
   const backBtn = document.getElementById("backBtn");
   const menuIcon = document.querySelector(".menu-icon");
@@ -1635,9 +1639,8 @@ function openPage(id, title){
   setTimeout(initGallery,300);
 }
 function goHome(){
-openPage('home','Home');
+openPage('home','Zero Quantum Frequency™');
 }
-
 function initGallery(){
 
 const imgs=document.querySelectorAll('.gallery img');
@@ -1688,6 +1691,7 @@ window.open("pages/prashn.html","_self");
 window.onload = function(){
 
   const activePage = document.querySelector('.page.active').id;
+ document.getElementById('title').innerText = "Zero Quantum Frequency™";
   const backBtn = document.getElementById("backBtn");
   const menuIcon = document.querySelector(".menu-icon");
 
