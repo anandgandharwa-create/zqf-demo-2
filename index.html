@@ -1116,9 +1116,6 @@ box-shadow:
   border:1px solid rgba(255,215,0,0.7);
 
   cursor:pointer;
-
-  /* 🔥 BLINK EFFECT */
-  animation: yellowBlink 3.5s infinite;
 }
 
 /* hover (blink के ऊपर extra boost) */
@@ -1190,12 +1187,9 @@ z-index:9998;
 
 <div class="homeTop">
 
-<div class="welcome">Welcome</div>
-
-<div class="appTitle">
-Zero Quantum Frequency™
+<div class="tagline">
+आप अपने मूल स्वरूप में लौट रहे हैं
 </div>
-
 <div class="tagline">
 Return to your original state
 </div>
@@ -1207,7 +1201,8 @@ Return to your original state
 
 <div class="dailyCard">
 
-<div class="dailyTitle">✨ आज का ज्ञान</div>
+<div class="dailyTitle">🔮 आज का रहस्य (Tap करें)</div>
+<div class="dailyBtn" onclick="revealGyan()">देखें</div>
 
 <div class="dailyText">
 “मुश्किलें रास्ता रोकने नहीं आतीं,
@@ -1231,7 +1226,7 @@ Return to your original state
 
 <div class="askWrap">
   <div class="askQuestionBtn" onclick="location.href='audio/audio5.mp3'">
-    🎧 आज का ऑडियो सुनें
+    🎧 आज की ऊर्जा सुनें
   </div>
 </div>
 
@@ -1251,7 +1246,7 @@ Krishna Code
 </div>
 
 <div class="footer">
-Zero Quantum Frequency™ © Gandharwa Anand
+© Zero Quantum Frequency™
 </div>
 
 </div>
@@ -1776,6 +1771,9 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.controller.postMessage({action:'skipWaiting'});
   }
   location.reload();
+}
+   function revealGyan(){
+  alert("आज का पूरा संदेश यहाँ दिखेगा 🔥");
 }
 </script>
 <div id="updatePopup" style="
