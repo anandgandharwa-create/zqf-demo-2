@@ -48,20 +48,18 @@ box-shadow:0 4px 20px rgba(0,0,0,0.4);
 /* ===== FINAL UNIVERSAL CENTER FIX ===== */
 
 .container{
-padding:25px 14px;
+width:100%;
 max-width:420px;
-margin:auto;
+
+margin:0 auto;          /* 👈 center fix */
+padding:25px 14px;
+
 min-height:100vh;
 
-display:flex;
-flex-direction:column;
-align-items:center;   /* 👈 अब safe है */
-}
+box-sizing:border-box;
 
-/* 🔥 ONLY DIRECT CHILD FIX */
-.container > *{
-width:100%;
-max-width:380px;
+/* 🔥 IMPORTANT: FLEX पूरी तरह हटाओ */
+display:block;
 }
 
 .longtext{
