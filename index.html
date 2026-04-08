@@ -45,31 +45,23 @@ color:#ffffff;
 z-index:1000;
 box-shadow:0 4px 20px rgba(0,0,0,0.4);
 }
+/* ===== FINAL UNIVERSAL CENTER FIX ===== */
+
 .container{
 padding:25px 14px;
 max-width:420px;
 margin:auto;
 min-height:100vh;
 
-display:block;   /* 🔥 FLEX हटाओ */
+display:flex;
+flex-direction:column;
+align-items:center;   /* 👈 अब safe है */
 }
- /* ✅ SAFE CENTER FIX */
 
-.homeTop,
-.dailyCard,
-.oracleCard,
-.coursePromo,
-.authorBox,
-.reviewBox,
-.gitaShlok,
-.longtext,
-.quote,
-.engQuote,
-.courseDesc,
-.courseTagline{
+/* 🔥 ONLY DIRECT CHILD FIX */
+.container > *{
+width:100%;
 max-width:380px;
-margin-left:auto;
-margin-right:auto;
 }
 
 .longtext{
