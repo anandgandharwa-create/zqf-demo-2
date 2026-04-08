@@ -1283,6 +1283,11 @@ margin-right:auto;
   font-size:13px;
   color:#6f8a9a;
 }
+ .side-menu a:first-of-type + a,
+.side-menu a:first-of-type + a + a {
+  background: linear-gradient(90deg,#0f2a3a,#102f44);
+  border-left: 3px solid #ffd700;
+}
 </style>
 </head>
 
@@ -1313,7 +1318,7 @@ z-index:9998;
 
 <a href="#" class="disabledMenu">📚 Course (Coming Soon)</a>
 <a href="#" onclick="openPage('courses','Divine Access')">✨ Divine Access</a>
-<a href="#" onclick="openPage('krishna','Krishna Code')"> Krishna Code</a>
+<a href="#" onclick="openPage('krishna','Krishna Code')">🕉 Krishna Code</a>
 <a href="pages/meditation.html">🧘 Meditation</a>
 <a href="pages/mindgym.html">🏋️ Mind Gym</a>
 <a href="#" onclick="openPage('about','About')">ℹ️ About</a>
