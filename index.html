@@ -1408,7 +1408,7 @@ z-index:9998;
 पर क्या आपने कभी उसे जांचा है?”
 </div>
 
-<div class="dailyBtn" onclick="window.open('audio/audio5.mp3','_blank')">
+<div class="dailyBtn" onclick="location.href='audio/audio5.mp3'">
 🎧 ज्ञान सुनें
 </div>
 <!-- 🧠 SINGLE MAIN BUTTON -->
@@ -1860,16 +1860,6 @@ window.open("pages/prashn.html","_self");
 </script>
 <script>
 
-  // internal pages ignore
-  if (url.startsWith('#') || url.startsWith('/')) return;
-
-  // open external websites in browser
-  if (url.startsWith('http')) {
-    e.preventDefault();
-    window.open(url, '_blank');
-  }
-
-});
 window.onload = function(){
  let level = localStorage.getItem("level") || 1;
   let streak = localStorage.getItem("streak") || 0;
