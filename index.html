@@ -1185,49 +1185,93 @@ z-index:9998;
 <!-- HOME -->
 <div id="home" class="container page active">
 
+<!-- ⚡ HOOK -->
 <div class="homeTop">
-
-<div class="tagline">
-आप अपने मूल स्वरूप में लौट रहे हैं
-</div>
-<div class="tagline">
-Return to your original state
-</div>
-
+  <div class="tagline">
+    ⚡ क्या आप अपने मन को नियंत्रित करते हैं...
+  </div>
+  <div class="tagline">
+    या मन आपको नियंत्रित करता है?
+  </div>
 </div>
 
+<!-- 🏆 PROGRESS -->
+<div class="dailyCard">
+  🏆 आपका स्तर: <b id="level">1</b><br><br>
+  🔥 लगातार दिन: <b id="streak">0</b><br><br>
 
-<!-- DAILY KRISHNA MESSAGE -->
+  आज का अभ्यास पूरा करें और Level बढ़ाएं
+</div>
 
+<!-- 🔮 DAILY MYSTERY -->
 <div class="dailyCard">
 
-<div class="dailyTitle">🔮 आज का रहस्य </div>
+  <div class="dailyTitle">🔮 आज का रहस्य</div>
 
-<div class="dailyText">
-“डर हमेशा भविष्य में रहता है,
-और शक्ति हमेशा वर्तमान में।
-जो अभी में जीता है, वही विजेता बनता है।”
+  <div id="hiddenGyan" class="dailyText">
+    👉 सच जानने के लिए नीचे टैप करें
+  </div>
+
+  <div class="dailyBtn" onclick="revealGyan()">
+    🔓 Tap to Reveal
+  </div>
+
 </div>
 
+<!-- 🎮 PLAY ENTRY -->
+<div class="dailyCard">
+
+  <div class="dailyTitle">🎮 आज का चैलेंज</div>
+
+  <div class="dailyText">
+    क्या आप मन से अलग हैं?<br>
+    आज खेलकर जानें
+  </div>
+
+  <div class="dailyBtn" onclick="openPage('courses','Divine Access')">
+    🚀 Play Now
+  </div>
 
 </div>
 
-
-<!-- 🔮 ASK QUESTION BUTTON (NEW) -->
+<!-- ✨ MAIN ACTION BUTTONS -->
 
 <div class="askWrap">
   <div class="askQuestionBtn" onclick="location.href='pages/mann-ke-prashn.html'">
-    ✨ अपने मन का उत्तर अभी जानें
+    ✨ अभी जानें – आपका मन क्या कह रहा है
   </div>
 </div>
-<!-- 🎧 आज का ऑडियो बटन -->
 
 <div class="askWrap">
   <div class="askQuestionBtn" onclick="location.href='audio/audio5.mp3'">
-    🎧 आज की ऊर्जा सुनें
+    🎧 60 सेकंड में अपनी ऊर्जा बदलें
   </div>
 </div>
 
+<!-- 🧠 MENU -->
+
+<div class="menuGrid">
+
+  <div class="menuCard highlight" onclick="openPage('courses','Divine Access')">
+    <span class="menuIcon">✨</span>
+    Divine Access <br>
+    <small>🔓 Unlock your inner power</small>
+  </div>
+
+  <div class="menuCard highlight" onclick="openPage('krishna','Krishna Code')">
+    <span class="menuIcon">🕉</span>
+    Krishna Code <br>
+    <small>📜 Hidden wisdom revealed</small>
+  </div>
+
+</div>
+
+<!-- ⚠️ ADDICTION TRIGGER -->
+<div class="footer">
+  ⚠️ अगर आप आज नहीं आए, तो आपका लेवल रीसेट हो जाएगा
+</div>
+
+</div>
 <!-- MAIN MENU -->
 
 <div class="menuGrid">
