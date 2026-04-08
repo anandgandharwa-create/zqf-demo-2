@@ -1194,6 +1194,95 @@ max-width:380px;
 margin-left:auto;
 margin-right:auto;
 }
+ /* ===== PREMIUM HOME UI ===== */
+
+.premiumCard{
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(18px);
+
+  border-radius:22px;
+  padding:22px;
+  margin-top:18px;
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.7),
+  0 0 20px rgba(0,150,255,0.1);
+
+  transition:0.3s;
+}
+
+.premiumCard:hover{
+  transform:translateY(-3px);
+}
+
+.premiumTitle{
+  font-size:16px;
+  color:#ffd700;
+  margin-bottom:10px;
+}
+
+.premiumText{
+  font-size:15px;
+  color:#d6e6f2;
+  line-height:1.5;
+  margin-bottom:16px;
+}
+
+.premiumBtn{
+  background:linear-gradient(135deg,#ffd700,#ffb300);
+  color:#000;
+
+  padding:12px;
+  border-radius:22px;
+
+  font-weight:600;
+  text-align:center;
+
+  box-shadow:0 0 15px rgba(255,215,0,0.4);
+
+  transition:0.25s;
+}
+
+.premiumBtn:hover{
+  transform:scale(1.05);
+}
+
+/* MAIN BIG BUTTON */
+
+.mainAction{
+  margin-top:25px;
+
+  background:linear-gradient(135deg,#ffd700,#ffb300);
+  color:#000;
+
+  padding:16px;
+  border-radius:40px;
+
+  font-weight:600;
+  font-size:16px;
+
+  box-shadow:0 0 20px rgba(255,215,0,0.5);
+
+  cursor:pointer;
+}
+
+/* PROGRESS */
+
+.progressBox{
+  margin-top:25px;
+  font-size:14px;
+  color:#9bb8c9;
+}
+
+/* FOOTER */
+
+.softFooter{
+  margin-top:20px;
+  font-size:13px;
+  color:#6f8a9a;
+}
 </style>
 </head>
 
@@ -1235,91 +1324,59 @@ z-index:9998;
 
 <!-- ⚡ HOOK -->
 <div class="homeTop">
- <div class="heroText">
-  ⚡ क्या आप अपने मन को नियंत्रित करते हैं...
-  <br>
-  या मन आपको नियंत्रित करता है?
-</div>
-</div>
-
-<!-- 🏆 PROGRESS -->
-<div class="dailyCard">
-  🏆 आपका स्तर: <b id="level">1</b><br><br>
-  🔥 लगातार दिन: <b id="streak">0</b><br><br>
-
-  आज का अभ्यास पूरा करें और Level बढ़ाएं
+  <div class="heroText">
+    ⚡ क्या आप अपने मन को नियंत्रित करते हैं
+    <br> या मन आपको?
+  </div>
 </div>
 
-<!-- 🔮 DAILY MYSTERY -->
-<div class="dailyCard">
+<!-- 🔮 MAIN ACTION (HERO FEATURE) -->
+<div class="premiumCard">
+  <div class="premiumTitle">🔮 आज का रहस्य</div>
 
-  <div class="dailyTitle">🔮 आज का रहस्य</div>
-
-  <div id="hiddenGyan" class="dailyText">
-    👉 सच जानने के लिए नीचे टैप करें
+  <div id="hiddenGyan" class="premiumText">
+    👉 आज का सत्य जानने के लिए टैप करें
   </div>
 
-  <div class="dailyBtn" onclick="revealGyan()">
+  <div class="premiumBtn" onclick="revealGyan()">
     🔓 Tap to Reveal
   </div>
 
 </div>
 
-<!-- 🎮 PLAY ENTRY -->
-<div class="dailyCard">
+<!-- 🎮 SECOND ACTION -->
+<div class="premiumCard">
 
-  <div class="dailyTitle">🎮 आज का चैलेंज</div>
+  <div class="premiumTitle">🎮 आज का अनुभव</div>
 
-  <div class="dailyText">
+  <div class="premiumText">
     क्या आप मन से अलग हैं?<br>
     आज खेलकर जानें
   </div>
 
-  <div class="dailyBtn" onclick="openPage('courses','Divine Access')">
+  <div class="premiumBtn" onclick="openPage('courses','Divine Access')">
     🚀 Play Now
   </div>
 
 </div>
 
-<!-- ✨ MAIN ACTION BUTTONS -->
-
-<div class="askWrap">
-  <div class="askQuestionBtn" onclick="location.href='pages/mann-ke-prashn.html'">
-    ✨ अभी जानें – आपका मन क्या कह रहा है
-  </div>
+<!-- 🧠 SINGLE MAIN BUTTON -->
+<div class="mainAction" onclick="location.href='pages/mann-ke-prashn.html'">
+  ✨ अभी जानें - आपका मन क्या कह रहा है
 </div>
 
-<div class="askWrap">
-  <div class="askQuestionBtn" onclick="location.href='audio/audio5.mp3'">
-    🎧 60 सेकंड में अपनी ऊर्जा बदलें
-  </div>
+<!-- 🏆 PROGRESS (BOTTOM) -->
+<div class="progressBox">
+  🏆 स्तर: <b id="level">1</b> &nbsp; | &nbsp;
+  🔥 दिन: <b id="streak">0</b>
 </div>
 
-<!-- 🧠 MENU -->
-
-<div class="menuGrid">
-
-  <div class="menuCard highlight" onclick="openPage('courses','Divine Access')">
-    <span class="menuIcon">✨</span>
-    Divine Access <br>
-    <small>🔓 Unlock your inner power</small>
-  </div>
-
-  <div class="menuCard highlight" onclick="openPage('krishna','Krishna Code')">
-    <span class="menuIcon">🕉</span>
-    Krishna Code <br>
-    <small>📜 Hidden wisdom revealed</small>
-  </div>
-
-</div>
-
-<!-- ⚠️ ADDICTION TRIGGER -->
-<div class="footer">
-  ⚠️ अगर आप आज नहीं आए, तो आपका लेवल रीसेट हो जाएगा
+<!-- 🔔 SOFT RETENTION -->
+<div class="softFooter">
+  🔔 कल फिर आएं - नया अनुभव आपका इंतज़ार करेगा
 </div>
 
 </div>
-
 <!-- ABOUT -->
 
 <div id="about" class="container page">
