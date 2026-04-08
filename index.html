@@ -50,13 +50,26 @@ padding:25px 14px;
 max-width:420px;
 margin:auto;
 min-height:100vh;
-position:relative;
 
-display:flex;
-flex-direction:column;
-align-items:center;   /* 👈 वापस यही करो */
+display:block;   /* 🔥 FLEX हटाओ */
+}
+ /* ✅ SAFE CENTER FIX */
 
-box-sizing:border-box;
+.homeTop,
+.dailyCard,
+.oracleCard,
+.coursePromo,
+.authorBox,
+.reviewBox,
+.gitaShlok,
+.longtext,
+.quote,
+.engQuote,
+.courseDesc,
+.courseTagline{
+max-width:380px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .longtext{
@@ -1154,14 +1167,6 @@ text-shadow:
 font-size:22px;
 font-weight:600;
 color:#ffd700;
-}
- /* 🔥 UNIVERSAL CENTER FIX */
-
-.container > *{
-max-width:380px;
-width:100%;
-margin-left:auto;
-margin-right:auto;
 }
 </style>
 </head>
