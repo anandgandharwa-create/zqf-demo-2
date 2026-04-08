@@ -1735,7 +1735,11 @@ window.open("pages/prashn.html","_self");
 
 });
 window.onload = function(){
+ let level = localStorage.getItem("level") || 1;
+  let streak = localStorage.getItem("streak") || 0;
 
+  document.getElementById("level").innerText = level;
+  document.getElementById("streak").innerText = streak;
   const activePage = document.querySelector('.page.active').id;
  document.getElementById('title').innerText = "Zero Quantum Frequency™";
   const backBtn = document.getElementById("backBtn");
@@ -1823,9 +1827,32 @@ if ('serviceWorker' in navigator) {
   }
   location.reload();
 }
-   function revealGyan(){
-  alert("आज का पूरा संदेश यहाँ दिखेगा 🔥");
+ <script>
+function revealGyan(){
+
+  const messages = [
+    "डर भविष्य में है, शक्ति वर्तमान में।",
+    "आप मन नहीं हैं, आप साक्षी हैं।",
+    "जहाँ ध्यान है, वहीं ऊर्जा है।",
+    "जो अभी में है, वही मुक्त है।"
+  ];
+
+  const random = messages[Math.floor(Math.random()*messages.length)];
+
+  document.getElementById("hiddenGyan").innerText = random;
+
+  // 🎯 reward system
+  let level = localStorage.getItem("level") || 1;
+  level++;
+  localStorage.setItem("level", level);
+  document.getElementById("level").innerText = level;
+
+  let streak = localStorage.getItem("streak") || 0;
+  streak++;
+  localStorage.setItem("streak", streak);
+  document.getElementById("streak").innerText = streak;
 }
+</script>
 </script>
 <div id="updatePopup" style="
 position:fixed;
