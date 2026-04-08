@@ -1304,6 +1304,29 @@ margin-right:auto;
   text-align:center;   /* 👈 center alignment */
  text-shadow:0 0 8px rgba(255,215,0,0.5);
 }
+ .dailyQuote{
+  margin-top:12px;
+  padding:14px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+
+  font-size:14px;
+  color:#ffd700;
+
+  text-align:center;
+}
+
+.quoteText{
+  margin-top:6px;
+  font-size:15px;
+  color:#ffffff;
+  line-height:1.5;
+
+  font-style:italic;
+}
 </style>
 </head>
 
@@ -1357,16 +1380,17 @@ z-index:9998;
 
 <!-- 🔮 MAIN ACTION (HERO FEATURE) -->
 <div class="premiumCard">
-  <div class="premiumTitle">🔮 आज का रहस्य</div>
+ <div class="dailyQuote">
+  🌿 आज का विचार
+
+  <div class="quoteText">
+    “आप मन नहीं हैं, आप साक्षी हैं।”
+  </div>
+</div>
 
   <div id="hiddenGyan" class="premiumText">
     👉 आज का सत्य जानने के लिए टैप करें
   </div>
-
-  <div class="premiumBtn" onclick="revealGyan()">
-    🔓 Tap to Reveal
-  </div>
-
 </div>
 
 <!-- 🎮 SECOND ACTION -->
