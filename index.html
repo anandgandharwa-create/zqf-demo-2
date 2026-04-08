@@ -1118,6 +1118,40 @@ box-shadow:0 10px 25px rgba(255,215,0,0.5);
   transform: scale(1.05);
   box-shadow: 0 0 30px rgba(0, 198, 255, 0.9);
 }
+ .heroText{
+font-size:20px;          /* 👈 बड़ा किया */
+line-height:1.6;
+
+color:#eaf6ff;
+
+font-weight:500;
+
+text-align:center;
+
+padding:18px 16px;
+
+/* ✨ glass look */
+background: rgba(255,255,255,0.04);
+backdrop-filter: blur(14px);
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,0.08);
+
+/* 🌌 soft glow */
+box-shadow:
+0 8px 30px rgba(0,0,0,0.6),
+0 0 20px rgba(0,120,255,0.2);
+
+/* ✨ text glow */
+text-shadow:
+0 0 6px rgba(0,180,255,0.4);
+}
+ .heroText::first-line{
+font-size:22px;
+font-weight:600;
+color:#ffd700;
+}
 </style>
 </head>
 
@@ -1159,12 +1193,11 @@ z-index:9998;
 
 <!-- ⚡ HOOK -->
 <div class="homeTop">
-  <div class="tagline">
-    ⚡ क्या आप अपने मन को नियंत्रित करते हैं...
-  </div>
-  <div class="tagline">
-    या मन आपको नियंत्रित करता है?
-  </div>
+ <div class="heroText">
+  ⚡ क्या आप अपने मन को नियंत्रित करते हैं...
+  <br>
+  या मन आपको नियंत्रित करता है?
+</div>
 </div>
 
 <!-- 🏆 PROGRESS -->
