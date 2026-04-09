@@ -1873,8 +1873,12 @@ window.onload = function(){
   document.getElementById("streak").innerText = streak;
   const activePage = document.querySelector('.page.active').id;
  document.getElementById('title').innerText = "Zero Quantum Frequency™";
+ openPage('home','Zero Quantum Frequency™');
   const backBtn = document.getElementById("backBtn");
   const menuIcon = document.querySelector(".menu-icon");
+ window.onerror = function(message, source, lineno, colno, error) {
+  console.log("Error:", message);
+};
 
   if(activePage === "home"){
     backBtn.style.display = "none";
