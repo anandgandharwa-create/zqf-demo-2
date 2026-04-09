@@ -1796,34 +1796,49 @@ box-shadow:0 0 18px rgba(255,215,0,0.4);
 <script>
 function openPage(id, title){
 
-  closeMenu();
+  try{
 
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    closeMenu();
 
-  const page = document.getElementById(id);
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 
-  if(!page){
-    console.error("Page not found:", id);
-    return;
+    const page = document.getElementById(id);
+
+    if(!page){
+      console.log("Page not found:", id);
+      return;
+    }
+
+    page.classList.add('active');
+
+    const titleEl = document.getElementById('title');
+    if(titleEl){
+      titleEl.innerText = title || "Zero Quantum Frequency™";
+    }
+
+    const backBtn = document.getElementById("backBtn");
+    const menuIcon = document.querySelector(".menu-icon");
+
+    if(id === "home"){
+      if(backBtn) backBtn.style.display = "none";
+      if(menuIcon) menuIcon.style.display = "block";
+    }else{
+      if(backBtn) backBtn.style.display = "block";
+      if(menuIcon) menuIcon.style.display = "none";
+    }
+
+    window.scrollTo(0,0);
+
+    setTimeout(()=>{
+      if(typeof initGallery === "function"){
+        initGallery();
+      }
+    },300);
+
+  }catch(e){
+    console.log("openPage Error:", e);
   }
 
-  page.classList.add('active');
-
-  document.getElementById('title').innerText = title || "Zero Quantum Frequency™";
-
-  const backBtn = document.getElementById("backBtn");
-  const menuIcon = document.querySelector(".menu-icon");
-
-  if(id === "home"){
-    backBtn.style.display = "none";
-    menuIcon.style.display = "block";
-  }else{
-    backBtn.style.display = "block";
-    menuIcon.style.display = "none";
-  }
-
-  window.scrollTo(0,0);
- setTimeout(initGallery,300);
 }
 function goHome(){
 openPage('home','Zero Quantum Frequency™');
@@ -1866,28 +1881,26 @@ window.open("pages/prashn.html","_self");
 <script>
 
 window.onload = function(){
- let level = localStorage.getItem("level") || 1;
-  let streak = localStorage.getItem("streak") || 0;
 
-  document.getElementById("level").innerText = level;
-  document.getElementById("streak").innerText = streak;
-  const activePage = document.querySelector('.page.active').id;
- document.getElementById('title').innerText = "Zero Quantum Frequency™";
- openPage('home','Zero Quantum Frequency™');
-  const backBtn = document.getElementById("backBtn");
-  const menuIcon = document.querySelector(".menu-icon");
- window.onerror = function(message, source, lineno, colno, error) {
-  console.log("Error:", message);
-};
+  try{
 
-  if(activePage === "home"){
-    backBtn.style.display = "none";
-    menuIcon.style.display = "block";   // ✅ Home पर दिखेगा
-  }else{
-    backBtn.style.display = "block";
-    menuIcon.style.display = "none";    // ❌ बाकी pages पर hide
+    let level = localStorage.getItem("level") || 1;
+    let streak = localStorage.getItem("streak") || 0;
+
+    const levelEl = document.getElementById("level");
+    const streakEl = document.getElementById("streak");
+
+    if(levelEl) levelEl.innerText = level;
+    if(streakEl) streakEl.innerText = streak;
+
+    // 🔥 SAFE PAGE LOAD
+    openPage('home','Zero Quantum Frequency™');
+
+  }catch(e){
+    console.log("Init Error:", e);
   }
 
+};
 };
 </script>
 
