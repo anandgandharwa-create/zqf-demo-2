@@ -1924,38 +1924,7 @@ function krishnaOracle(){
 </script>
  
   <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js').then(reg => {
 
-    // हर बार update check
-    reg.update();
-
-    // 🔥 NEW UPDATE DETECT
-    reg.onupdatefound = () => {
-      const newWorker = reg.installing;
-
-      newWorker.onstatechange = () => {
-        if (newWorker.state === 'installed') {
-
-          // अगर पुराना SW already चल रहा है
-         if (navigator.serviceWorker.controller) {
-
-    // 👇 यहीं डालो
-    document.getElementById("updatePopup").style.display = "block";
-
-    setInterval(() => {
-      document.getElementById("updatePopup").style.display = "block";
-    }, 15000);
-
-}
-
-          }
-        }
-      };
-    };
-
-  });
-}
   function updateApp(){
   if (navigator.serviceWorker.controller) {
     navigator.serviceWorker.controller.postMessage({action:'skipWaiting'});
