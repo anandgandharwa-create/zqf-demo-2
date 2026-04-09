@@ -1799,27 +1799,31 @@ function openPage(id, title){
   closeMenu();
 
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
 
-if(id === "home"){
-  document.getElementById('title').innerText = "Zero Quantum Frequency™";
-}else{
-  document.getElementById('title').innerText = title;
-}
+  const page = document.getElementById(id);
+
+  if(!page){
+    console.error("Page not found:", id);
+    return;
+  }
+
+  page.classList.add('active');
+
+  document.getElementById('title').innerText = title || "Zero Quantum Frequency™";
 
   const backBtn = document.getElementById("backBtn");
   const menuIcon = document.querySelector(".menu-icon");
 
   if(id === "home"){
     backBtn.style.display = "none";
-    menuIcon.style.display = "block";   // ✅ Home पर दिखेगा
+    menuIcon.style.display = "block";
   }else{
     backBtn.style.display = "block";
-    menuIcon.style.display = "none";    // ❌ बाकी pages पर hide
+    menuIcon.style.display = "none";
   }
 
   window.scrollTo(0,0);
-  setTimeout(initGallery,300);
+ setTimeout(initGallery,300);
 }
 function goHome(){
 openPage('home','Zero Quantum Frequency™');
