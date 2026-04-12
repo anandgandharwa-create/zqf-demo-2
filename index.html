@@ -1377,55 +1377,54 @@ z-index:9998;
 <!-- HOME -->
 <div id="home" class="container page active">
 
-<!-- ⚡ HOOK -->
+<!-- ⚡ STRONG HOOK -->
 <div class="homeTop">
   <div class="heroText">
-    ⚡ क्या आप अपने मन को नियंत्रित करते हैं
-    <br> या मन आपको?
+    ⚡ अगर आपका मन control में नहीं है…
+    <br> तो आपकी life कभी control में नहीं होगी
   </div>
 </div>
 
-<!-- 🔮 MAIN ACTION (HERO FEATURE) -->
+<!-- 🔥 MAIN ACTION (ONLY ONE FOCUS) -->
 <div class="premiumCard">
 
-  <div class="premiumTitle">🌿 आज का विचार</div>
+  <div class="premiumTitle">🧠 2 Minute Mind Reset</div>
 
   <div class="quoteText">
-   “डर हमेशा भविष्य में रहता है,
-और शक्ति हमेशा वर्तमान में।
-जो अभी में जीता है, वही विजेता बनता है।”
+    “Headphones लगाओ… आँखें बंद करो…  
+    सिर्फ 2 मिनट में फर्क महसूस करो”
+  </div>
+
+  <!-- 🎧 MAIN BUTTON -->
+  <div class="mainAction" onclick="startReset()">
+    ▶ START 2 MIN RESET
   </div>
 
 </div>
 
-<!-- 🎮 SECOND ACTION -->
-<div class="premiumCard">
-
-<div class="dailyTitle">🔥 आज का सत्य</div>
-
-<div class="dailyText">
-“लोग किस्मत बदलने के पीछे भागते हैं
-और समझदार लो अपनी ‘सोच’ बदल देते हैं।
-क्योंकि वही असली game changer है।”
-</div>
-
-<div class="dailyBtn" onclick="location.href='audio/audio5.mp3'">
-🎧 ज्ञान सुनें
-</div>
-<!-- 🧠 SINGLE MAIN BUTTON -->
-<div class="mainAction" onclick="location.href='pages/mann-ke-prashn.html'">
-  ✨ अभी जानें - आपका मन क्या कह रहा है
-</div>
-
-<!-- 🏆 PROGRESS (BOTTOM) -->
+<!-- 📊 PROGRESS -->
 <div class="progressBox">
   🏆 Level: <b id="level">1</b> &nbsp; | &nbsp;
   🔥 Day: <b id="streak">0</b>
 </div>
 
-<!-- 🔔 SOFT RETENTION -->
+<!-- 🔽 SECONDARY OPTIONS (SMALL, NOT DISTRACTING) -->
 <div class="softFooter">
-  🔔 कल फिर आएं - नया अनुभव आपका इंतज़ार करेगा
+
+  <div style="margin-top:10px;">
+    <span onclick="location.href='audio/audio5.mp3'" style="cursor:pointer;">
+      🎧 आज का ज्ञान
+    </span>
+    &nbsp; | &nbsp;
+    <span onclick="location.href='pages/mann-ke-prashn.html'" style="cursor:pointer;">
+      ✨ Mind Test
+    </span>
+  </div>
+
+  <div style="margin-top:12px;">
+    🔔 कल Day 2 unlock होगा
+  </div>
+
 </div>
 
 </div>
@@ -1944,7 +1943,11 @@ function krishnaOracle(){
   }
   location.reload();
 }
-
+function startReset(){
+  alert("Headphones लगाओ और 2 मिनट शांत बैठो...");
+  window.location.href = "audio/audio1.mp3"; // 👉 अपना main audio डालो
+  localStorage.setItem("streak", parseInt(localStorage.getItem("streak") || 0) + 1);
+}
 </script>
 <div id="updatePopup" style="
 position:fixed;
