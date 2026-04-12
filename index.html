@@ -1396,7 +1396,9 @@ z-index:9998;
   </div>
 
   <!-- 🎧 MAIN BUTTON -->
-  <div class="mainAction" onclick="startReset()">
+<button class="mainAction" onclick="startReset(event)">
+  ▶ START 2 MIN RESET
+</button>
     ▶ START 2 MIN RESET
   </div>
 
@@ -1947,6 +1949,17 @@ function startReset(){
   alert("Headphones लगाओ और 2 मिनट शांत बैठो...");
   window.location.href = "audio/audio5.mp3"; // 👉 अपना main audio डालो
   localStorage.setItem("streak", parseInt(localStorage.getItem("streak") || 0) + 1);
+  if(e) e.preventDefault();
+
+  // 👇 focus हटाओ (important)
+  document.activeElement.blur();
+
+  // 👇 यहाँ अपना काम करो
+  let box = document.getElementById("resultBox");
+
+  if(box){
+    box.style.display = "block";
+    box.innerText = "आँखें बंद करें… सांस पर ध्यान दें… अभी आपका mind reset हो रहा है...";
 }
 </script>
 <div id="updatePopup" style="
