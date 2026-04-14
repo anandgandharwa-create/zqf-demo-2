@@ -109,9 +109,13 @@ h1 {
     .success-text {
     color: #00e676;   /* 👈 bright green */
     font-weight: bold;
+    display: block;
+    margin-top: 10px;
 }
     .home-text {
     color: #ffffff;   /* 👈 pure white */
+    display: block;
+    margin-top: 8px;
 }
 </style>
 </head>
@@ -136,12 +140,7 @@ h1 {
         <button id="restartBtn" class="next-btn" onclick="restartGame()" style="display:none;">
             🔁 फिर से शुरू करें
         </button>
-        <span class="success-text">
-✨ आप बदल रहे हैं… और यही सबसे बड़ी शुरुआत है
-</span>
-        <span class="home-text">
-👉 और जानने के लिए Home पर जाएं
-</span>
+
       <div class="home-container">
     <button onclick="goHome()">🏠 Back to Home</button>
 </div>
@@ -230,11 +229,11 @@ else{
     document.getElementById("restartBtn").style.display = "block";
     document.getElementById("nextBtn").style.display = "none";
 document.getElementById("result").innerHTML += 
-"<br><br>✨ आप बदल रहे हैं… और यही सबसे बड़ी शुरुआत है";
+"<br><br><span class='success-text'>✨ आप बदल रहे हैं… और यही सबसे बड़ी शुरुआत है</span>";
     // 🔥 Redirect hint (growth loop)
     setTimeout(()=>{
         document.getElementById("result").innerHTML += 
-        "<br><br>👉 और जानने के लिए Home पर जाएँ";
+       "<br><br><span class='home-text'>👉 और जानने के लिए Home पर जाएँ</span>";
     }, 2000);
 }
 
