@@ -84,6 +84,7 @@ h1 {
     margin-top: 15px;
     color: gold;
     font-size: 16px;
+    animation: fadeIn 1s ease-in-out;
 }
 .home-btn {
     margin-top: 25px;
@@ -106,16 +107,32 @@ h1 {
     background: gold;
     color: black;
 }
-    .success-text {
-    color: #00e676;   /* 👈 bright green */
+   .success-text {
+    color: #00e676;
     font-weight: bold;
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
+    text-shadow: 0 0 8px rgba(0, 255, 100, 0.8);
 }
-    .home-text {
-    color: #ffffff;   /* 👈 pure white */
+  .home-text {
+    color: #ffffff;
     display: block;
     margin-top: 8px;
+    font-size: 15px;
+}
+    .fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 </style>
 </head>
@@ -211,32 +228,35 @@ function nextQuestion(){
 
 function showResult(){
 
-  let msg = "";
+let msg = "";
 
 if(answers.includes("डर")){
-    msg = "डर से मत भागो… वही तुम्हारी सबसे बड़ी शक्ति बनने वाला है।\n\nजब तुम डर के पार कदम रखते हो, तभी असली विकास शुरू होता है।\n\n👉 आज एक छोटा कदम उठाओ - वही तुम्हें नई ऊँचाई पर ले जाएगा।";
+    msg = "डर से मत भागो… वही तुम्हारी सबसे बड़ी शक्ति बनने वाला है।<br><br>जब तुम डर के पार कदम रखते हो, तभी असली विकास शुरू होता है।<br><br>👉 आज एक छोटा कदम उठाओ - वही तुम्हें नई ऊँचाई पर ले जाएगा।";
 } 
 else if(answers.includes("मोह")){
-    msg = "मोह ही दुख का मूल कारण है… और यही तुम्हें आगे बढ़ने से रोक रहा है।\n\nजब तुम छोड़ना सीखते हो, तभी सच्ची शांति और स्वतंत्रता मिलती है।\n\n👉 आज एक ऐसी चीज़ छोड़ो जो तुम्हें बाँध रही है।";
+    msg = "मोह ही दुख का मूल कारण है… और यही तुम्हें आगे बढ़ने से रोक रहा है।<br><br>जब तुम छोड़ना सीखते हो, तभी सच्ची शांति और स्वतंत्रता मिलती है।<br><br>👉 आज एक ऐसी चीज़ छोड़ो जो तुम्हें बाँध रही है।";
 } 
 else{
-    msg = "स्पष्टता ही सफलता का मार्ग है… और तुम्हारा मन अब सही दिशा दिखा रहा है।\n\nजब ध्यान कर्म पर होता है, तो परिणाम अपने आप बेहतर बनते हैं।\n\n👉 आज बिना भ्रम के, एक सही निर्णय लो।";
-}
-    document.getElementById("question").innerText = "✨ आपका गीता-संदेश";
-    document.getElementById("options").innerHTML = "";
-    document.getElementById("result").innerText = msg;
-
-    document.getElementById("restartBtn").style.display = "block";
-    document.getElementById("nextBtn").style.display = "none";
-document.getElementById("result").innerHTML += 
-"<br><br><span class='success-text'>✨ आप बदल रहे हैं… और यही सबसे बड़ी शुरुआत है</span>";
-    // 🔥 Redirect hint (growth loop)
-    setTimeout(()=>{
-        document.getElementById("result").innerHTML += 
-       "<br><br><span class='home-text'>👉 और जानने के लिए Home पर जाएँ</span>";
-    }, 2000);
+    msg = "स्पष्टता ही सफलता का मार्ग है… और तुम्हारा मन अब सही दिशा दिखा रहा है।<br><br>जब ध्यान कर्म पर होता है, तो परिणाम अपने आप बेहतर बनते हैं।<br><br>👉 आज बिना भ्रम के, एक सही निर्णय लो।";
 }
 
+document.getElementById("question").innerText = "✨ आपका मार्ग";
+document.getElementById("options").innerHTML = "";
+
+/* 🌟 FULL RESULT WITH EFFECT */
+document.getElementById("result").innerHTML = `
+<div class="fade-in">
+${msg}
+
+<span class="success-text">✨ आप बदल रहे हैं… और यही सबसे बड़ी शुरुआत है</span>
+
+<span class="home-text">👉 और जानने के लिए Home पर जाएँ</span>
+</div>
+`;
+
+document.getElementById("restartBtn").style.display = "block";
+document.getElementById("nextBtn").style.display = "none";
+}
 function restartGame(){
     current = 0;
     answers = [];
