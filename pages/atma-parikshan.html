@@ -1,1 +1,223 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>🧠 गीता आत्म-परीक्षण</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #1a0000, #000000);
+    color: white;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Title */
+h1 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #ffcc00;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 0, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Question */
+#question {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Options */
+.option {
+    background: linear-gradient(45deg, #ffcc00, #ff9900);
+    color: black;
+    margin: 10px 0;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.option.selected {
+    background: red;
+    color: white;
+}
+
+/* Button */
+.next-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    background: linear-gradient(45deg, red, gold);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Result */
+.result {
+    margin-top: 15px;
+    color: gold;
+    font-size: 16px;
+}
+
+/* Restart */
+#restartBtn {
+    margin-top: 20px;
+    background: gold;
+    color: black;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧠 गीता आत्म-परीक्षण</h1>
+    <div class="subtitle">⏳ सिर्फ 30 सेकंड – खुद को जानिए</div>
+
+    <div class="card">
+        <div id="question"></div>
+        <div id="options"></div>
+
+        <div id="result" class="result"></div>
+
+        <button id="nextBtn" class="next-btn" onclick="nextQuestion()" style="display:none;">
+            ➡️ आगे बढ़ें
+        </button>
+
+        <button id="restartBtn" class="next-btn" onclick="restartGame()" style="display:none;">
+            🔁 फिर से शुरू करें
+        </button>
+    </div>
+
+</div>
+
+<script>
+
+let questions = [
+{
+    question: "गीता के अनुसार आपकी सबसे बड़ी बाधा क्या है?",
+    options: ["डर", "मोह", "आलस्य"]
+},
+{
+    question: "आपके जीवन में अभी सबसे जरूरी क्या है?",
+    options: ["शांति", "साहस", "स्पष्टता"]
+},
+{
+    question: "आपका मन आपको कहाँ रोक रहा है?",
+    options: ["भूतकाल", "भविष्य की चिंता", "लोग क्या कहेंगे"]
+}
+];
+
+let answers = [];
+let current = 0;
+let selected = null;
+
+function loadQuestion(){
+    let q = questions[current];
+    document.getElementById("question").innerText = q.question;
+
+    let html = "";
+    q.options.forEach(opt => {
+        html += `<div class="option" onclick="selectOption('${opt}', this)">${opt}</div>`;
+    });
+
+    document.getElementById("options").innerHTML = html;
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("result").innerHTML = "";
+}
+
+function selectOption(opt, el){
+    selected = opt;
+    document.querySelectorAll(".option").forEach(o => o.classList.remove("selected"));
+    el.classList.add("selected");
+    document.getElementById("nextBtn").style.display = "block";
+}
+
+function nextQuestion(){
+
+    if(!selected){
+        alert("⚠️ एक विकल्प चुनिए");
+        return;
+    }
+
+    answers.push(selected);
+    selected = null;
+    current++;
+
+    if(current >= questions.length){
+        showResult();
+        return;
+    }
+
+    loadQuestion();
+}
+
+function showResult(){
+
+    let msg = "";
+
+    if(answers.includes("डर")){
+        msg = "📿 गीता कहती है: डर से भागो मत… वही तुम्हारी शक्ति बनने वाला है।";
+    }
+    else if(answers.includes("मोह")){
+        msg = "📿 गीता का संदेश: मोह ही दुख का कारण है… इसे छोड़ते ही शांति मिलेगी।";
+    }
+    else{
+        msg = "📿 गीता का संदेश: स्पष्टता ही सफलता का मार्ग है… अपने कर्म पर ध्यान दो।";
+    }
+
+    document.getElementById("question").innerText = "✨ आपका गीता संदेश";
+    document.getElementById("options").innerHTML = "";
+    document.getElementById("result").innerText = msg;
+
+    document.getElementById("restartBtn").style.display = "block";
+    document.getElementById("nextBtn").style.display = "none";
+
+    // 🔥 Redirect hint (growth loop)
+    setTimeout(()=>{
+        document.getElementById("result").innerHTML += 
+        "<br><br>👉 और जानने के लिए Home पर जाएँ";
+    }, 2000);
+}
+
+function restartGame(){
+    current = 0;
+    answers = [];
+    selected = null;
+    document.getElementById("restartBtn").style.display = "none";
+    loadQuestion();
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
