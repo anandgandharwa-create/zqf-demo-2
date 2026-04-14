@@ -72,8 +72,9 @@ h1 {
     margin-top: 15px;
     border-radius: 12px;
     font-size: 16px;
-    background: linear-gradient(45deg, red, gold);
+    background: linear-gradient(45deg, #00c853, #00e676);
     color: white;
+    box-shadow: 0 0 10px rgba(0, 255, 100, 0.6);
     border: none;
     cursor: pointer;
 }
@@ -108,12 +109,13 @@ h1 {
         <div id="result" class="result"></div>
 
         <button id="nextBtn" class="next-btn" onclick="nextQuestion()" style="display:none;">
-            ➡️ आगे बढ़ें
+           🚀 अगले चरण पर जाएँ
         </button>
 
         <button id="restartBtn" class="next-btn" onclick="restartGame()" style="display:none;">
             🔁 फिर से शुरू करें
         </button>
+        <button onclick="goHome()">🏠 Back to Home</button>
     </div>
 
 </div>
@@ -216,7 +218,9 @@ function restartGame(){
 }
 
 loadQuestion();
-
+function goHome(){
+    window.location.href = "../index.html";
+}
 </script>
 
 </body>
