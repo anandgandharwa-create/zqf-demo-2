@@ -106,6 +106,13 @@ h1 {
     background: gold;
     color: black;
 }
+    .success-text {
+    color: #00e676;   /* 👈 bright green */
+    font-weight: bold;
+}
+    .home-text {
+    color: #ffffff;   /* 👈 pure white */
+}
 </style>
 </head>
 
@@ -129,6 +136,12 @@ h1 {
         <button id="restartBtn" class="next-btn" onclick="restartGame()" style="display:none;">
             🔁 फिर से शुरू करें
         </button>
+        <span class="success-text">
+✨ आप बदल रहे हैं… और यही सबसे बड़ी शुरुआत है
+</span>
+        <span class="home-text">
+👉 और जानने के लिए Home पर जाएं
+</span>
       <div class="home-container">
     <button onclick="goHome()">🏠 Back to Home</button>
 </div>
